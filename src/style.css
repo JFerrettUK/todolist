@@ -13,55 +13,77 @@
 
 body {
     background: #e4e4e4;
-    padding: 5px;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     margin: 0;
-  
-    font: 500 100% system-ui, sans-serif;
-    text-transform: uppercase;
+    color: white;
+    font: 500 100% 'Roboto';
 }
 
 .page-wrap {
-    background: white;
+    background: black;
     height: calc(100vh - 10px);
     box-shadow: 0 0 3px rgba(black, 0.33);
-  
     display: grid;
-    grid-template-columns: minmax(10px, 1fr) minmax(10px, 3fr);
-    grid-template-rows: min-content min-content 1fr min-content;
+    grid-template-columns: minmax(200px, 1fr) minmax(10px, 4fr);
+    grid-template-rows: min-content 1fr min-content;
     gap: 1px;
 }
   
 .page-header {
+    display: grid;
+    justify-content: left;
+    padding-left: 40px;
+    align-items: center;
     height: 100px;
     grid-column: 1 / -1;
-    background: #ffcdd2;
+    background:#16213E;
 }
   
 .page-sidebar {
+    padding-left: 40px;
+    padding-top: 20px;
     grid-column: 1 / 2;
     grid-row: 2 / 4;
-    background: #e1bee7;
+    background: #E94560;;
+    box-shadow: 0 0 3px rgba(black, 0.33);
 }
 
-.page-nav {
-    height: 50px;
-    grid-column: 2 / 3;
-    background: #bbdefb;
-}
 
 .page-main {
     grid-column: 2 / 3;
-    background: #dcedc8;
+    background: #0F3460;
+    box-shadow: inset 0px 5px 7px -7px rgb(0, 0, 0);
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-right: 30px;
 }
 
-.page-footer {
-    height: 50px;
-    grid-column: 1 / -1;
-    background: #ffecb3;
+    #titleHead {
+        border-radius: 30px;
+        background-color: #E94560;
+        height:70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: xx-large;
+    }
+
+    #projectOpen {
+        margin-top: 30px;
+    }
+
+.headerText {
+    font-weight: 800;
+    font-size: xxx-large;
 }
+
+    #hText2 {
+        color: #E94560;
+    }
   
-details p {
-    text-transform: none;
-    text-align: left;
+.leadText {
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size:x-large;
 }
