@@ -1,4 +1,4 @@
-export default function createObject(titleHere, descriptionHere, 
+export default function createProject(titleHere, descriptionHere, 
     dueDateHere, priorityHere, notesHere, checklistHere) {
     return {
         title: titleHere,
