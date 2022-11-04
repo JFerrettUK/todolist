@@ -80,6 +80,10 @@ body {
             margin-right: 3px;
             filter: invert(100%);
         }
+
+        #textInput {
+            width: 145px;
+        }
     
 .page-main {
     grid-column: 2 / 3;
