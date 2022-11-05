@@ -75,16 +75,51 @@ body {
             align-items: center;
         }
 
-        .navLogo2 {
-            height: 15px;
-            margin-right: 3px;
-            filter: invert(100%);
+            .navLogo2 {
+                height: 15px;
+                margin-right: 3px;
+                filter: invert(100%);
+            }
+
+        #addFormCont {
+            display: none;
+        }    
+
+        #addProjectForm {
+            display: grid;
+            gap: 5px;
         }
 
         #textInput {
             width: 145px;
         }
-    
+
+        #submitBtns {
+            display:flex;
+            gap: 5px;
+        }
+
+            #submitButton {
+                background-color: #0F3460;
+            }
+
+            #cancelButton {
+                background-color: #E94560;
+            }
+
+            .buttonForm {
+                display: inline-block;
+                border: 1px solid #ffffff;
+                text-align: center;
+                border-radius: 5px;
+                vertical-align: top;
+                font-size: 14px;
+                min-height: 28px;
+                min-width: 69.5px;
+                line-height: 1.29;
+                color: #ffffff;
+            }
+        
 .page-main {
     grid-column: 2 / 3;
     background: #0F3460;

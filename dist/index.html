@@ -45,10 +45,16 @@
           <img class="navLogo2" src="./plus.svg">
           Add Project
         </div>
-        <form id="addProjectForm" class="addProjectForm">
-          <label for="pname">Project name:</label><br>
-          <input id="textInput" type="text" id="pname" name="pname" value="John" maxlength="10"><br>
-                </form>            
+        <div id="addFormCont">
+          <form id="addProjectForm" class="addProjectForm">
+            <label for="pname">Project name:</label>
+            <input id="textInput" type="text" id="pname" name="pname" placeholder="Project here" maxlength="15">
+            <div id="submitBtns">
+              <button type="button" id="submitButton" class="buttonForm">Submit</button>
+              <button type="button" id="cancelButton" class="buttonForm">Cancel</button>
+            </div>
+          </form>
+        </div>
       </aside>
     </div>
     
