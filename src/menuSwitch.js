@@ -13,7 +13,6 @@ export default function menuSwitch() {
     const closeProject = document.getElementById("cancelButton");
     const submitProject = document.getElementById("submitButton");
 
-
     function activateProject () {
         refreshPage();
         makeProjectPage();
@@ -33,8 +32,8 @@ export default function menuSwitch() {
     }
 
     function newProjectSave () {
-        closeProjectBox();
         submitNewProject();
+        closeProjectBox();
     }
 
     projectHeader.addEventListener('click', activateProject);

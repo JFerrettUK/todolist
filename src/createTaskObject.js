@@ -1,4 +1,4 @@
-export default function createProject(titleHere, descriptionHere, 
+export default function createTaskObject(titleHere, descriptionHere, 
     dueDateHere, priorityHere, notesHere, projectHere) {
     return {
         title: titleHere,
