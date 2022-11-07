@@ -19,7 +19,7 @@
             Inbox
           </span>
         </div>
-        <br>
+        <!-- <br>
         <div class="taskBox">
           <div class="taskBoxStart"></div>
           <span class="taskTitleText">
@@ -27,7 +27,8 @@
           </span>
           <div class="divider"></div>
           <span class="priorityBox">Medium</span>
-        </div>
+          <img class="trashIcon" src="./trash.png"></img>
+        </div> -->
       </main>
       <aside class="page-sidebar">
         <div id="inboxText">
@@ -41,28 +42,29 @@
           Upcoming
         </div>
         <br>
-        <div class="projectText" id="projectHeader" >
-          <img class="navLogo" src="./cog-outline.svg">
-          Projects
-        </div>      
-        <br>
-        <div id="projectsHere">
-          <div class="newProjectText">- Example #1</div>
-        </div>
-        <br>
-        <div id="addProjectText" class="addProjectText">
-          <img class="navLogo2" src="./plus.svg">
-          Add Project
-        </div>
-        <div id="addFormCont">
-          <form id="addProjectForm" class="addProjectForm">
-            <label for="pname">Project name:</label>
-            <input id="textInput" type="text" id="pname" name="pname" placeholder="Project here" maxlength="15">
-            <div id="submitBtns">
-              <button type="button" id="submitButton" class="buttonForm">Submit</button>
-              <button type="button" id="cancelButton" class="buttonForm">Cancel</button>
-            </div>
-          </form>
+        <div id="projectHeadCont">
+          <div class="projectText" id="projectHeader" >
+            <img class="navLogo" src="./cog-outline.svg">
+            Projects
+          </div>      
+          <br>
+          <div id="projectsHere">
+          </div>
+          <br>
+          <div id="addProjectText" class="addProjectText">
+            <img class="navLogo2" src="./plus.svg">
+            Add Project
+          </div>
+          <div id="addFormCont">
+            <form id="addProjectForm" class="addProjectForm">
+              <label for="pname">Project name:</label>
+              <input id="textInput" type="text" id="pname" name="pname" placeholder="Project here" minlength="3" maxlength="15">
+              <div id="submitBtns">
+                <button type="submit" id="submitButton" class="buttonForm">Submit</button>
+                <button type="button" id="cancelButton" class="buttonForm">Cancel</button>
+              </div>
+            </form>
+          </div>
         </div>
       </aside>
     </div>

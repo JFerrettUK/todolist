@@ -150,7 +150,7 @@ body {
         color:#0F3460;
         display: grid;
         align-items: center;
-        grid-template-columns: 20px 150px 1fr 1fr 1fr 1fr;
+        grid-template-columns: 20px 150px 1fr 100px 50px;
     }
 
         .taskBoxStart {
@@ -173,6 +173,15 @@ body {
             display: grid;
             align-items: center;
             justify-content: center;
+        }
+
+        .trashIcon {
+            display: grid;
+            margin-left: 9px;
+            justify-content: center;
+            height: 25px;
+            filter: opacity(40%);
+            width: 25px;
         }
 
 .headerText {
