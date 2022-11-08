@@ -3,8 +3,8 @@ import makeInboxPage from './inboxPageLoad';
 import refreshPage from './refreshPage';
 import newProjectBox from './newProjectBox';
 import closeProjectBox from './closeProjectBox';
-import saveNewProject from './submitNewProject';
-
+import submitNewProject from './submitNewProject';
+import makeProjectHeader from './makeProjectHeader';
 
 export default function domManip() {
     const projectHeader = document.getElementById("projectHeader");
@@ -33,7 +33,9 @@ export default function domManip() {
     }
 
     function newProjectSave () {
-        saveNewProject();
+        let projectName = submitNewProject();
+        console.log(projectName)
+        makeProjectHeader(projectName);
         closeProjectBox();
     }
 

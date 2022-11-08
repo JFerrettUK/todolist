@@ -1,3 +1,4 @@
-export default function saveNewProject() {
-    console.log("test");
+export default function submitNewProject() {
+    const projectName = document.getElementById('textInput').value;
+    return projectName
 }

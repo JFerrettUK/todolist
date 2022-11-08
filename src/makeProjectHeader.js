@@ -1,10 +1,17 @@
 export default function makeProjectHeader(projectName) {
     const projectHere = document.getElementById('projectsHere');
-    
-    const project = document.createElement('span');
-    project.setAttribute("class", "newProjectText");
-    project.setAttribute("id", `${projectName}ProjectHeader`);   
-    project.textContent = `- ${projectName}`;
+    const breakPoint = document.createElement('br');
 
-    projectHere.appendChild(project);
+    if (projectName.length < 4) {
+        alert("Project name must be at least 4 characters long");
+        return;
+    } else {
+        const project = document.createElement('span');
+        project.setAttribute("class", "newProjTxt");
+        project.setAttribute("id", `${projectName}ProjHead`);   
+        project.textContent = `- ${projectName}`;
+
+        projectHere.appendChild(project);
+        projectHere.appendChild(breakPoint);
+    }
 }
