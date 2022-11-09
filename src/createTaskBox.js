@@ -6,7 +6,11 @@ export default function createTaskBox(taskName, priorityLevel) {
     let boxNo = getBoxNo();
     
     //make container for boxes
+    const taskCont = document.createElement('div');
+    taskCont.setAttribute("class", "taskCont");
+    taskCont.setAttribute("id", `${boxNo}Cont`)
 
+    
     const taskBox = document.createElement('div');
     taskBox.setAttribute("class", "taskBox");
     taskBox.setAttribute("id", `${boxNo}Box`)
@@ -31,8 +35,9 @@ export default function createTaskBox(taskName, priorityLevel) {
     trashIcon.setAttribute("class", "trashIcon");
     trashIcon.setAttribute("id", `${boxNo}Trash`);   
 
-    mainHeader.appendChild(breakBox);
-    mainHeader.appendChild(taskBox);
+    mainHeader.appendChild(taskCont);
+    taskCont.appendChild(breakBox);
+    taskCont.appendChild(taskBox);
     taskBox.appendChild(taskBoxStart);
     taskBox.appendChild(taskTitleText);
     taskBox.appendChild(divider);

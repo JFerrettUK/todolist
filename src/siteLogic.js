@@ -7,11 +7,9 @@ import createTaskBox from './createTaskBox';
 import createProjectHeader from './createProjectHeader';
 
 export default function siteLogic() {
-    domManip();
     createTaskBox("Box1", "High");
     createTaskBox("bigTask", "Medium");
     createTaskBox("smallTask", "Low");
     createProjectHeader("Todo List Program")
-
-
+    domManip();
 }

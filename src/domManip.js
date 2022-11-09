@@ -5,6 +5,7 @@ import newProjectBox from './newProjectBox';
 import closeProjectBox from './closeProjectBox';
 import submitNewProject from './submitNewProject';
 import makeProjectHeader from './makeProjectHeader';
+import deleteTaskBox from './deleteTaskBox';
 
 export default function domManip() {
     const projectHeader = document.getElementById("projectHeader");
@@ -13,6 +14,11 @@ export default function domManip() {
     const closeProject = document.getElementById("cancelButton");
     const submitProject = document.getElementById("submitButton");
     const addProjectForm = document.getElementById("addProjectForm");
+
+    //deleteButtons
+    const trashButton0 = document.getElementById(`0Trash`)
+    const trashButton1 = document.getElementById(`1Trash`)
+    const trashButton2 = document.getElementById(`2Trash`)
 
     function activateProject () {
         refreshPage();
@@ -34,10 +40,14 @@ export default function domManip() {
 
     function newProjectSave () {
         let projectName = submitNewProject();
-        console.log(projectName)
         makeProjectHeader(projectName);
         closeProjectBox();
     }
+
+    function deleteTask (value) {
+        deleteTaskBox(value);
+    }
+
 
     projectHeader.addEventListener('click', activateProject);
     inboxText.addEventListener('click', activateInbox);
@@ -46,4 +56,8 @@ export default function domManip() {
 
     submitProject.addEventListener('click', newProjectSave);
     addProjectForm.addEventListener("submit", (e) => {e.preventDefault();});
+
+    trashButton0.addEventListener("click", function(){deleteTask(0)});
+    trashButton1.addEventListener("click", function(){deleteTask(1)});
+    trashButton2.addEventListener("click", function(){deleteTask(2)});     
 }

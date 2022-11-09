@@ -132,6 +132,7 @@ body {
     #titleHead {
         border-radius: 30px;
         background-color: #E94560;
+        min-width: 320px;
         height:70px;
         display: flex;
         justify-content: center;
@@ -143,46 +144,118 @@ body {
         margin-top: 30px;
     }
 
-    .taskBox {
-        border-radius: 30px;
-        background-color: #d8cdcf;
-        height:35px;
-        color:#0F3460;
-        display: grid;
-        align-items: center;
-        grid-template-columns: 20px 150px 1fr 100px 50px;
-    }
-
-        .taskBoxStart {
-            background: #E94560;
-            width: 20px;
-            height: 35px;
-            border-top-left-radius: 30px;
-            border-bottom-left-radius: 30px;
+        #newTaskCont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 320px;
         }
 
-        .taskTitleText {
-            margin-left: 20px;
-        }
+            .newTaskBox {
+                border-radius: 30px;
+                border:#ffffff solid 2px;
+                background-color: #0F3460;
+                height:35px;
+                width: 250px;
+                color:#ffffff;
+                display: grid;
+                align-items: center;
+                grid-template-columns: 1fr 25px 120px 1fr;
+            }
 
-        .priorityBox {
-            height: 25px;
-            background: yellow;
-            width: 100px;
-            border-radius:15px;
+            .newPlus {
+                height: 17px;
+                margin-right: 3px;
+                filter: invert(100%);
+            }
+
+            .newTaskTitleText {
+                margin-left: 3px;
+            }
+
+
+            #taskFormCont {
+                display: grid;
+                justify-content: center;
+            }    
+
+            #addTaskForm {
+                display: grid;
+                gap: 5px;
+            }
+
+            #textTaskInput {
+                width: 250px;
+            }
+
+            #taskSubmitBtns {
+                display:flex;
+                gap: 5px;
+            }
+
+                #taskSubmitButton {
+                    background-color: #0F3460;
+                }
+
+                #taskCancelButton {
+                    background-color: #E94560;
+                }
+
+                .taskButtonForm {
+                    display: inline-block;
+                    border: 1px solid #ffffff;
+                    text-align: center;
+                    border-radius: 5px;
+                    vertical-align: top;
+                    font-size: 14px;
+                    min-height: 28px;
+                    min-width: 122px;
+                    line-height: 1.29;
+                    color: #ffffff;
+                }
+            
+
+        .taskBox {
+            border-radius: 30px;
+            background-color: #d8cdcf;
+            height:35px;
+            min-width: 320px;
+            color:#0F3460;
             display: grid;
             align-items: center;
-            justify-content: center;
+            grid-template-columns: 20px 150px 1fr 100px 50px;
         }
 
-        .trashIcon {
-            display: grid;
-            margin-left: 9px;
-            justify-content: center;
-            height: 25px;
-            filter: opacity(40%);
-            width: 25px;
-        }
+            .taskBoxStart {
+                background: #E94560;
+                width: 20px;
+                height: 35px;
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+            }
+
+            .taskTitleText {
+                margin-left: 20px;
+            }
+
+            .priorityBox {
+                height: 25px;
+                background: yellow;
+                width: 100px;
+                border-radius:15px;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .trashIcon {
+                display: grid;
+                margin-left: 9px;
+                justify-content: center;
+                height: 25px;
+                filter: opacity(40%);
+                width: 25px;
+            }
 
 .headerText {
     font-weight: 800;
