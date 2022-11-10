@@ -30,17 +30,31 @@
             <div></div>
           </div>
         </div>
-        <br>
         <div id="taskFormCont">
           <form id="addTaskForm" class="addTaskForm">
             <label id=taskNameLabel for="tname">Task name:</label>
-            <input id="textTaskInput" type="text" id="tname" name="tname" placeholder="Task here" minlength="3" maxlength="15">
+            <input type="text" id="tname" name="tname" placeholder="Task here" minlength="3" maxlength="15">
+            <label id=projectLabel for="projectList">Project:</label>
+            <select id="projectList" type="select" name="projectList">
+              <option value="low">Todo List Program</option>
+            </select>
+            <label id=priorityLabel for="priorityList">Priority:</label>
+            <select id="priorityList" type="select" name="priority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+            </select>
+              <label id=shortDescLabel for="shortDescInput">Short description:</label>
+            <input type="text" id="shortDescInput" name="shortDescInput" placeholder="Describe your project" minlength="3" maxlength="54">
+            </select>
+            <label for="dueDate">Due date:</label>
+            <input type="date" id="dueDate" name="dueDate">
             <div id="taskSubmitBtns">
-              <button type="submit" id="taskSubmitButton" class="taskButtonForm">Submit</button>
+              <button type="button" id="taskSubmitButton" class="taskButtonForm">Submit</button>
               <button type="button" id="taskCancelButton" class="taskButtonForm">Cancel</button>
             </div>
           </form>
-          <br>
         </div>
       </main>
       <aside class="page-sidebar">
@@ -66,7 +80,7 @@
               <label for="pname">Project name:</label>
               <input id="textInput" type="text" id="pname" name="pname" placeholder="Project here" minlength="3" maxlength="15">
               <div id="submitBtns">
-                <button type="submit" id="submitButton" class="buttonForm">Submit</button>
+                <button type="button" id="submitButton" class="buttonForm">Submit</button>
                 <button type="button" id="cancelButton" class="buttonForm">Cancel</button>
               </div>
             </form>
