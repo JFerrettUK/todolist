@@ -1,12 +1,11 @@
-export default function createTaskObject(titleHere, descriptionHere, 
-    dueDateHere, priorityHere, notesHere, projectHere) {
+export default function createTaskObject(titleHere, projectHere, priorityHere, 
+    descriptionHere, dueDateHere) {
     return {
-        title: titleHere,
+        taskName: titleHere,
+        project: projectHere,
+        priority: priorityHere,
         description: descriptionHere,
         dueDate: dueDateHere,
-        priority: priorityHere,
-        notes: notesHere,
-        project: projectHere,
 
         talk: function () {
             console.log('The project title is ' 

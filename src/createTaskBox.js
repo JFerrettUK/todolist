@@ -1,6 +1,6 @@
 import getBoxNo from './getBoxNo';
 
-export default function createTaskBox(taskName, priorityLevel) {
+export default function createTaskBox(taskName, priorityLevel, dueDate) {
     const mainHeader = document.getElementById('page-main');
     const breakBox = document.createElement('br');
     let boxNo = getBoxNo();
@@ -10,7 +10,6 @@ export default function createTaskBox(taskName, priorityLevel) {
     taskCont.setAttribute("class", "taskCont");
     taskCont.setAttribute("id", `${boxNo}Cont`)
 
-    
     const taskBox = document.createElement('div');
     taskBox.setAttribute("class", "taskBox");
     taskBox.setAttribute("id", `${boxNo}Box`)
@@ -25,6 +24,10 @@ export default function createTaskBox(taskName, priorityLevel) {
 
     const divider = document.createElement('div');
     divider.setAttribute("class", "divider");
+
+    const dueDateBox = document.createElement('span');
+    dueDateBox.setAttribute("id", `${boxNo}Date`);   
+    dueDateBox.textContent = `Due: ${dueDate}`;
 
     const priorityBox = document.createElement('span');
     priorityBox.setAttribute("class", "priorityBox");
@@ -41,6 +44,7 @@ export default function createTaskBox(taskName, priorityLevel) {
     taskBox.appendChild(taskBoxStart);
     taskBox.appendChild(taskTitleText);
     taskBox.appendChild(divider);
+    taskBox.appendChild(dueDateBox);
     taskBox.appendChild(priorityBox);
     taskBox.appendChild(trashIcon);
 
