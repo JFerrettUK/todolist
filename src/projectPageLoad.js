@@ -1,3 +1,5 @@
+//load project page content into page-main
+
 export default function makeProjectPage() {
     const projectMainHeader = document.getElementById('page-main');
     

@@ -1,3 +1,5 @@
+//load inbox page content into page-main
+
 export default function makeInboxPage() {
     const inboxMainHeader = document.getElementById('page-main');
     

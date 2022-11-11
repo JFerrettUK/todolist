@@ -1,6 +1,12 @@
 import getBoxNo from './getBoxNo';
 
-export default function createTaskBox(taskName, priorityLevel, dueDate) {
+//Close the "add task" form
+
+export default function createTaskBox(array) {
+    let taskName = array[0];
+    let priorityLevel = array[1];
+    let dueDate = array[2];
+
     const mainHeader = document.getElementById('page-main');
     const breakBox = document.createElement('br');
     let boxNo = getBoxNo();

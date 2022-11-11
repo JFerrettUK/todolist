@@ -1,3 +1,5 @@
+//Add a sub-Header in the nav-bar with the input "name" value of a new submitted project
+
 export default function makeProjectHeader(projectName) {
     const projectHere = document.getElementById('projectsHere');
     const breakPoint = document.createElement('br');

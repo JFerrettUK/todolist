@@ -1,3 +1,5 @@
+//Create an object with a set of task details
+
 export default function createTaskObject(titleHere, projectHere, priorityHere, 
     descriptionHere, dueDateHere) {
     return {

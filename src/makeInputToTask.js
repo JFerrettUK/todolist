@@ -1,5 +1,7 @@
 import createTaskBox from './createTaskBox';
 
+//Turn an array into a task box
+
 export default function createProjectHeader(taskArray) {
     let taskName = taskArray[0];
     let projectName = taskArray[1];
