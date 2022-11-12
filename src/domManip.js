@@ -79,7 +79,8 @@ export default function domManip() {
     cancelTask.addEventListener('click', closeTaskBox);
 
     submitTask.addEventListener("click", function (){
-        makeInputToT(input);
+        const input = createTaskObject("Test", "nameofProject", "Medium", "A test task", "09/12/2022");
+        createTaskBox(input);
         closeTaskBox();
     });
     
