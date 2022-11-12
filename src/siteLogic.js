@@ -5,13 +5,22 @@ import createProjectObject from './createProjectObject';
 import domManip from './domManip';
 import createTaskBox from './createTaskBox';
 import makeProjectHeader from './makeProjectHeader';
+//Take the inputs of the "add task" form and make it into a taskbox
+import makeTrashEventListeners from './makeTrashEventListeners';
 
 export default function siteLogic() {
-    const arrayHere = createTaskObject("testTitle", "projectHere", "priorityHere", "descriptionHere", "dueDateHere")
-    console.log(arrayHere)
 
-    createTaskBox(arrayHere);
-    createTaskBox(arrayHere);
+    const input = createTaskObject("Test", "nameofProject", "Medium", "A test task", "09/12/2022");
+    createTaskBox(input);
+    
+    const input2 = createTaskObject("2", "nameofProject", "High", "A test task", "29/02/2023");
+    createTaskBox(input2);
+    
+
+
+    const testArray = makeTrashEventListeners();
+    console.log(testArray);
+
     makeProjectHeader("Todo List Program")
     domManip();
 }

@@ -29,10 +29,13 @@ import showTaskBox from './showTaskBox';
 import closeTaskBox from './closeTaskBox';
 
 //Take the inputs of the "add task" form and make it into a taskbox
-import makeInputToTask from './makeInputToTask';
-
-//Take the inputs of the "add task" form and make it into a taskbox
 import makeTrashEventListeners from './makeTrashEventListeners';
+
+//create an object with task and details in it
+import createTaskObject from './createTaskObject';
+
+//create an OBJ in the HTML from input
+import createTaskBox from './createTaskBox';
 
 export default function domManip() {
     const projectNavMenu = document.getElementById("projectHeader");
@@ -44,18 +47,6 @@ export default function domManip() {
     const addTaskCont = document.getElementById("newTaskCont");
     const cancelTask = document.getElementById("taskCancelButton");
     const submitTask = document.getElementById("taskSubmitButton");
-
-    //deleteButtons
-    const trashButton0 = document.getElementById(`0Trash`)
-    const trashButton1 = document.getElementById(`1Trash`)
-    const trashButton2 = document.getElementById(`2Trash`)
-    const trashButton3 = document.getElementById(`3Trash`)
-    const trashButton4 = document.getElementById(`4Trash`)
-    const trashButton5 = document.getElementById(`5Trash`)
-    const trashButton6 = document.getElementById(`6Trash`)
-    const trashButton7 = document.getElementById(`7Trash`)
-    const trashButton8 = document.getElementById(`8Trash`)
-    const trashButton9 = document.getElementById(`9Trash`)
 
     //Delete the page-main and create a page showing projects
     function activateProject () {
@@ -78,12 +69,6 @@ export default function domManip() {
         closeProjectBox();
     }
 
-    //Turn an array into a task box
-    function makeInputToT() {
-        const taskArray = ["taskName", "ProjectName", "Medium", "A test task", "09/12/2022"];
-        makeInputToTask(taskArray)
-    }    
-
     projectNavMenu.addEventListener('click', activateProject);
     inboxTextNavMenu.addEventListener('click', activateInbox);
     addProjectText.addEventListener('click', showProjectBox);
@@ -92,7 +77,10 @@ export default function domManip() {
     addProjectForm.addEventListener("submit", (e) => {e.preventDefault();});
     addTaskCont.addEventListener('click', showTaskBox);
     cancelTask.addEventListener('click', closeTaskBox);
-    submitTask.addEventListener('click', makeInputToT);
 
-    makeTrashEventListeners();
+    submitTask.addEventListener("click", function (){
+        makeInputToT(input);
+        closeTaskBox();
+    });
+    
 }
