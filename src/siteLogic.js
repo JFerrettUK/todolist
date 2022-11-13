@@ -13,12 +13,9 @@ export default function siteLogic() {
     const input = createTaskObject("Test", "nameofProject", "Medium", "A test task", "09/12/2022");
     createTaskBox(input);
     
-    const input2 = createTaskObject("2", "nameofProject", "High", "A test task", "29/02/2023");
+    const input2 = createTaskObject("SecondTest", "nameofProject", "High", "A test task", "29/02/2023");
     createTaskBox(input2);
     
-    const testArray = makeTrashEventListeners();
-    console.log(testArray);
-
     makeProjectHeader("Todo List Program");
     domManip();
 }

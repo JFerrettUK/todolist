@@ -37,6 +37,10 @@ import createTaskObject from './createTaskObject';
 //create an OBJ in the HTML from input
 import createTaskBox from './createTaskBox';
 
+import addDeleteListeners from './addDeleteListeners';
+import getBoxNo from './getBoxNo';
+
+
 export default function domManip() {
     const projectNavMenu = document.getElementById("projectHeader");
     const inboxTextNavMenu = document.getElementById("inboxText");
@@ -77,11 +81,15 @@ export default function domManip() {
     addProjectForm.addEventListener("submit", (e) => {e.preventDefault();});
     addTaskCont.addEventListener('click', showTaskBox);
     cancelTask.addEventListener('click', closeTaskBox);
+    addTaskCont.addEventListener('click', showTaskBox);
 
     submitTask.addEventListener("click", function (){
         const input = createTaskObject("Test", "nameofProject", "Medium", "A test task", "09/12/2022");
         createTaskBox(input);
         closeTaskBox();
+        addDeleteListeners()
     });
-    
+
+    addDeleteListeners()
+   
 }
