@@ -5,8 +5,7 @@ import createProjectObject from './createProjectObject';
 import domManip from './domManip';
 import createTaskBox from './createTaskBox';
 import makeProjectHeader from './makeProjectHeader';
-//Take the inputs of the "add task" form and make it into a taskbox
-import makeTrashEventListeners from './makeTrashEventListeners';
+import getLastBox from './getLastBox';
 
 export default function siteLogic() {
 
@@ -18,4 +17,5 @@ export default function siteLogic() {
     
     makeProjectHeader("Todo List Program");
     domManip();
+    getLastBox();
 }

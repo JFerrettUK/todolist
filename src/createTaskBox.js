@@ -1,4 +1,6 @@
 import getBoxNo from './getBoxNo';
+import getLastBox from './getLastBox';
+
 
 //Close the "add task" form
 
@@ -57,4 +59,5 @@ export default function createTaskBox(input) {
     taskBox.appendChild(trashIcon);
 
     document.getElementById(`${boxNo}Trash`).src="./trash.png";
+    console.log(getLastBox())
 }

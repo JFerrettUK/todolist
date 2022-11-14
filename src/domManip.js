@@ -37,8 +37,8 @@ import createTaskObject from './createTaskObject';
 //create an OBJ in the HTML from input
 import createTaskBox from './createTaskBox';
 
+//Adds delete listeners dependant on the number of task boxes
 import addDeleteListeners from './addDeleteListeners';
-import getBoxNo from './getBoxNo';
 
 
 export default function domManip() {
