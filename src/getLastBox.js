@@ -1,14 +1,11 @@
 import getBoxNo from './getBoxNo';
 
 //Get last of the boxes
-export default function getLastbox() {
-    
-    const currentBoxNo = getBoxNo()
-    //use GetBoxNo to create an "if" for when there are no boxes, which currently crashes
-    console.log(currentBoxNo)
+export default function getLastBox() {
+    //only run below if getZero doesn't equal zero
 
     const last = Array.from(
-        document.querySelectorAll('.trashIcon')
+        document.querySelectorAll('.taskBox')
         ).pop();
     
     function getID(last){
@@ -17,48 +14,49 @@ export default function getLastbox() {
     }
 
     const lastID = getID(last)
+    const getZero = getBoxNo()
+    console.log(lastID)
 
-
-    if (lastID == 0) {
+    if (getZero == 0) {
         const output = 0
         return output
-    } else if (lastID == "0Trash") {
+    } else if (lastID == "0Box") {
         const output = 1
         return output
-    } else if (lastID == "1Trash") {
+    } else if (lastID == "1Box") {
         const output = 2
         return output
-    } else if (lastID == "2Trash") {
+    } else if (lastID == "2Box") {
         const output = 3
         return output
-    } else if (lastID == "3Trash") {
+    } else if (lastID == "3Box") {
         const output = 4
         return output
-    } else if (lastID == "4Trash") {
+    } else if (lastID == "4Box") {
         const output = 5
         return output
-    } else if (lastID == "5Trash") {
+    } else if (lastID == "5Box") {
         const output = 6
         return output
-    } else if (lastID == "6Trash") {
+    } else if (lastID == "6Box") {
         const output = 7
         return output
-    } else if (lastID == "7Trash") {
+    } else if (lastID == "7Box") {
         const output = 8
         return output
-    } else if (lastID == "8Trash") {
+    } else if (lastID == "8Box") {
         const output = 9
         return output
-    } else if (lastID == "9Trash") {
+    } else if (lastID == "9Box") {
         const output = 10
         return output
-    } else if (lastID == "10Trash") {
+    } else if (lastID == "10Box") {
         const output = 11
         return output
-    } else if (lastID == "11Trash") {
+    } else if (lastID == "11Box") {
         const output = 12
         return output
-    } else if (lastID == "12Trash") {
+    } else if (lastID == "12Box") {
         const output = 13
         return output
     } 

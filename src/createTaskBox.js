@@ -13,8 +13,12 @@ export default function createTaskBox(input) {
 
     const mainHeader = document.getElementById('page-main');
     const breakBox = document.createElement('br');
+
     let boxNo = getBoxNo();
+    console.log(boxNo)
     
+    console.log(getLastBox())
+
     //make container for boxes
     const taskCont = document.createElement('div');
     taskCont.setAttribute("class", "taskCont");
@@ -59,5 +63,4 @@ export default function createTaskBox(input) {
     taskBox.appendChild(trashIcon);
 
     document.getElementById(`${boxNo}Trash`).src="./trash.png";
-    console.log(getLastBox())
 }

@@ -17,5 +17,4 @@ export default function siteLogic() {
     
     makeProjectHeader("Todo List Program");
     domManip();
-    getLastBox();
 }
