@@ -1,24 +1,13 @@
-import getBoxNo from './getBoxNo';
 import getLastBox from './getLastBox';
-
 
 //Close the "add task" form
 
 export default function createTaskBox(input) {
-    let taskName = input.task();
-    let projectHere = input.project();
-    let priorityLevel = input.priority();
-    let description = input.description();
-    let dueDate = input.dueDate();
-
     const mainHeader = document.getElementById('page-main');
     const breakBox = document.createElement('br');
 
-    let boxNo = getBoxNo();
-    console.log(boxNo)
+    let boxNo = getLastBox();
     
-    console.log(getLastBox())
-
     //make container for boxes
     const taskCont = document.createElement('div');
     taskCont.setAttribute("class", "taskCont");

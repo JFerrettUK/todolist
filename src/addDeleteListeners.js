@@ -1,6 +1,5 @@
 //Count number of boxes
 import deleteTaskBox from './deleteTaskBox';
-import getBoxNo from './getBoxNo';
 import getLastBox from './getLastBox';
 
 export default function addDeleteListeners() {

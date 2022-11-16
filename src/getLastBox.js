@@ -2,22 +2,31 @@ import getBoxNo from './getBoxNo';
 
 //Get last of the boxes
 export default function getLastBox() {
-    //only run below if getZero doesn't equal zero
 
-    const last = Array.from(
-        document.querySelectorAll('.taskBox')
-        ).pop();
-    
-    function getID(last){
-        var id = last.id;
-        return id
+    function findNumberTask() {
+        const last = Array.from(
+            document.querySelectorAll('.taskBox')
+            ).pop();
+        
+        function getID(last){
+            const id = last.id;
+            return id
+        }
+
+        const checkBox = getBoxNo() 
+
+        if (checkBox == 0) {
+            const getZero = getBoxNo()
+            return getZero
+        } else {
+            const lastID = getID(last)
+            return lastID
+        }
     }
 
-    const lastID = getID(last)
-    const getZero = getBoxNo()
-    console.log(lastID)
+    const lastID = findNumberTask() 
 
-    if (getZero == 0) {
+    if (lastID == 0) {
         const output = 0
         return output
     } else if (lastID == "0Box") {
@@ -58,6 +67,21 @@ export default function getLastBox() {
         return output
     } else if (lastID == "12Box") {
         const output = 13
+        return output
+    } else if (lastID == "13Box") {
+        const output = 14
+        return output
+    } else if (lastID == "14Box") {
+        const output = 15
+        return output
+    } else if (lastID == "15Box") {
+        const output = 16
+        return output
+    } else if (lastID == "16Box") {
+        const output = 17
+        return output
+    } else if (lastID == "17Box") {
+        const output = 18
         return output
     } 
 }

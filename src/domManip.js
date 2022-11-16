@@ -40,6 +40,8 @@ import createTaskBox from './createTaskBox';
 //Adds delete listeners dependant on the number of task boxes
 import addDeleteListeners from './addDeleteListeners';
 
+//Create an array from the task input form
+import createInputTaskArray  from './createInputTaskArray';
 
 export default function domManip() {
     const projectNavMenu = document.getElementById("projectHeader");
@@ -84,12 +86,18 @@ export default function domManip() {
     addTaskCont.addEventListener('click', showTaskBox);
 
     submitTask.addEventListener("click", function (){
-        const input = createTaskObject("Test", "nameofProject", "Medium", "A test task", "09/12/2022");
+        const array = createInputTaskArray();
+        console.log(array)
+
+        //changes to CreateInputTaskArray, CreateTaskObject,CreateTaskBox, here
+        //Problem is when putting CreateTaskObject into CreateTaskBox
+
+        const input = createTaskObject(array);
+        console.log(input)
         createTaskBox(input);
         closeTaskBox();
         addDeleteListeners()
     });
 
     addDeleteListeners()
-   
 }
