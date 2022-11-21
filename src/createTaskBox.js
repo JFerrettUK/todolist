@@ -3,6 +3,19 @@ import getLastBox from './getLastBox';
 //Close the "add task" form
 
 export default function createTaskBox(input) {
+    let jsName = input.jsName();
+    let taskName = input.task();
+    let projectHere = input.project();
+    let priorityLevel = input.priority();
+    let description = input.description();
+    let dueDate = input.dueDate();
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+
+    const truePriority = capitalizeFirstLetter(priorityLevel)
+
     const mainHeader = document.getElementById('page-main');
     const breakBox = document.createElement('br');
 
@@ -35,7 +48,7 @@ export default function createTaskBox(input) {
     const priorityBox = document.createElement('span');
     priorityBox.setAttribute("class", "priorityBox");
     priorityBox.setAttribute("id", `${boxNo}Priority`);   
-    priorityBox.textContent = `${priorityLevel}`;
+    priorityBox.textContent = `${truePriority}`;
 
     const trashIcon = document.createElement('img');
     trashIcon.setAttribute("class", "trashIcon");

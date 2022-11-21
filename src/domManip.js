@@ -43,6 +43,9 @@ import addDeleteListeners from './addDeleteListeners';
 //Create an array from the task input form
 import createInputTaskArray  from './createInputTaskArray';
 
+//Create an array from the task input form
+import createProjectTaskOption  from './createProjectTaskOption';
+
 export default function domManip() {
     const projectNavMenu = document.getElementById("projectHeader");
     const inboxTextNavMenu = document.getElementById("inboxText");
@@ -79,6 +82,7 @@ export default function domManip() {
     inboxTextNavMenu.addEventListener('click', activateInbox);
     addProjectText.addEventListener('click', showProjectBox);
     cancelProject.addEventListener('click', closeProjectBox);
+    submitProject.addEventListener('click', createProjectTaskOption);
     submitProject.addEventListener('click', newProjectSave);
     addProjectForm.addEventListener("submit", (e) => {e.preventDefault();});
     addTaskCont.addEventListener('click', showTaskBox);

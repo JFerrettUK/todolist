@@ -1,5 +1,7 @@
 //Add a sub-Header in the nav-bar with the input "name" value of a new submitted project
 
+import getProjectNo from './getProjectNo';
+
 export default function makeProjectHeader(projectName) {
     const projectHere = document.getElementById('projectsHere');
     const breakPoint = document.createElement('br');
@@ -10,7 +12,7 @@ export default function makeProjectHeader(projectName) {
     } else {
         const project = document.createElement('span');
         project.setAttribute("class", "newProjTxt");
-        project.setAttribute("id", `${projectName}ProjHead`);   
+        project.setAttribute("id", `${getProjectNo()}ProjHead`);   
         project.textContent = `- ${projectName}`;
 
         projectHere.appendChild(project);
