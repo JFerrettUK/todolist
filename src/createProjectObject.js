@@ -2,5 +2,5 @@
 
 export default function createProjectObject(projectHere) {
     return {
-        task: () => projectHere,};
+        project: projectHere,};
 };

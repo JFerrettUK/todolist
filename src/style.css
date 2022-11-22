@@ -55,6 +55,12 @@ body {
         filter: invert(100%);
     }
 
+    .activeProject {
+        background-color: rgba(20, 54, 105, 0.3);
+        width: 300px;
+        border-radius: 3px;
+    }
+
 
     .projectText, #inboxText {
         display: flex;
@@ -119,6 +125,7 @@ body {
                 line-height: 1.29;
                 color: #ffffff;
             }
+
         
 .page-main {
     grid-column: 2 / 3;

@@ -11,7 +11,8 @@ export default function makeProjectHeader(projectName) {
         return;
     } else {
         const project = document.createElement('span');
-        project.setAttribute("class", "newProjTxt");
+        project.setAttribute("class", `newProjTxt`);
+
         project.setAttribute("id", `${getProjectNo()}ProjHead`);   
         project.textContent = `- ${projectName}`;
 

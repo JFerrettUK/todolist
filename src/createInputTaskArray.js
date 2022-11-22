@@ -17,7 +17,6 @@ export default function createInputTaskArray() {
     taskArray.push(priorityList);
     taskArray.push(shortDescInput);
     taskArray.push(dueDate);
-    console.log(taskArray)
 
     return taskArray
 }

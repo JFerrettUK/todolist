@@ -19,9 +19,6 @@ import submitNewProject from './submitNewProject';
 //Add a sub-Header in the nav-bar with the input "name" value of a new submitted project
 import makeProjectHeader from './makeProjectHeader';
 
-//Delete a task bar with the assigned number
-import deleteTaskBox from './deleteTaskBox';
-
 //Show the "add new task" form
 import showTaskBox from './showTaskBox';
 
@@ -88,20 +85,13 @@ export default function domManip() {
     addTaskCont.addEventListener('click', showTaskBox);
     cancelTask.addEventListener('click', closeTaskBox);
     addTaskCont.addEventListener('click', showTaskBox);
-
     submitTask.addEventListener("click", function (){
         const array = createInputTaskArray();
-        console.log(array)
-
-        //changes to CreateInputTaskArray, CreateTaskObject,CreateTaskBox, here
-        //Problem is when putting CreateTaskObject into CreateTaskBox
-
         const input = createTaskObject(array);
-        console.log(input)
         createTaskBox(input);
         closeTaskBox();
         addDeleteListeners()
     });
 
-    addDeleteListeners()
+    addDeleteListeners();
 }

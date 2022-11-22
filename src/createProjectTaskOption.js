@@ -3,9 +3,7 @@ import getLastBox from './getLastBox';
 //create a project task option in the task menu from the value in a project box
 import getProjectNo from './getProjectNo';
 
-export default function createProjectTaskOption() {
-    console.log("start")
-    
+export default function createProjectTaskOption() {   
     let numberOfProj = getProjectNo()
 
     const newProjectValue = document.getElementById('textInput').value;
@@ -17,7 +15,4 @@ export default function createProjectTaskOption() {
     newOption.textContent = `${newProjectValue}`;
 
     projectList.appendChild(newOption);
-
-    console.log("complete")
-
 }
