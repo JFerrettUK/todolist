@@ -1,9 +1,6 @@
-//test relevant classes for functionality
 import createProjectObject from './createProjectObject';
-import createTaskObject from './createTaskObject';
-import createInputTaskArray from './createInputTaskArray';
 
-export default function testObjectMakers(input) {
+export default function objManip() {
     const testProject = new createProjectObject("newProject", "IDhere")
     console.log(testProject)
 
