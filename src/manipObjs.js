@@ -1,5 +1,5 @@
 //create an object with task and details in it
-import createTaskObject from './createTaskObject';
+import createTaskArray from './createTaskArray';
 
 //create an object with task and details in it
 import createProjectObject from './createProjectObject';
@@ -22,8 +22,7 @@ export default function manipObj() {
     const submitTask = document.getElementById("taskSubmitButton");
 
 
-
-    
+   
 
     projectNavMenu.addEventListener('click', activateProject);
     inboxTextNavMenu.addEventListener('click', activateInbox);
@@ -31,7 +30,7 @@ export default function manipObj() {
     submitProject.addEventListener('click', newProjectSave);
     submitTask.addEventListener("click", function (){
         const array = createInputTaskArray();
-        const input = createTaskObject(array);
+        const input = createTaskArray(array);
         createTaskBox(input);
         closeTaskBox();
         addDeleteListeners()
