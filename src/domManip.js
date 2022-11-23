@@ -29,7 +29,7 @@ import closeTaskBox from './closeTaskBox';
 import makeTrashEventListeners from './makeTrashEventListeners';
 
 //create an object with task and details in it
-import createTaskObject from './createTaskObject';
+import createTaskArray from './createTaskArray';
 
 //create an OBJ in the HTML from input
 import createTaskBox from './createTaskBox';
@@ -87,7 +87,7 @@ export default function domManip() {
     addTaskCont.addEventListener('click', showTaskBox);
     submitTask.addEventListener("click", function (){
         const array = createInputTaskArray();
-        const input = createTaskObject(array);
+        const input = createTaskArray(array);
         createTaskBox(input);
         closeTaskBox();
         addDeleteListeners()

@@ -1,6 +1,13 @@
-//Create an object with a project name
+//Create a project and allow tasks to be appended to it
 
-export default function createProjectObject(projectHere) {
-    return {
-        project: projectHere,};
-};
+export default class Project {
+    constructor(name, id) {
+        this.name = name;
+        this.id = id;
+        this.tasks = []
+    };
+
+    appendTask(task) {
+        this.tasks.push(task);
+    }
+}
