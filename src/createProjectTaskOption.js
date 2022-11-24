@@ -11,7 +11,7 @@ export default function createProjectTaskOption() {
 
     const newOption = document.createElement('option');
     newOption.setAttribute("class", `newProjects`);
-    newOption.setAttribute("id", `project${numberOfProj}`);
+    newOption.setAttribute("id", `${numberOfProj}Project`);
     newOption.textContent = `${newProjectValue}`;
 
     projectList.appendChild(newOption);
