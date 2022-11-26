@@ -48,7 +48,6 @@ export default function projectManip() {
 
         let newProjectValue = document.getElementById('textInput').value;
         console.log(newProjectValue)
-
         const newProject = new createProjectObject(newProjectValue, `${projectNo}Project`)
         projectList.addNewProject(newProject)
         console.log(projectList.getArray())
