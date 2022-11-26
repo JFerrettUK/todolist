@@ -1,5 +1,3 @@
-import getLastBox from './getLastBox';
-
 //create a project task option in the task menu from the value in a project box
 import getProjectNo from './getProjectNo';
 

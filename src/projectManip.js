@@ -1,9 +1,10 @@
 import createProjectObject from './createProjectObject';
+
 import createTaskObject from './createProjectObject';
 import getProjectNo from './getProjectNo';
 
 
-export default function objManip() {
+export default function projectManip() {
     const projectList = (function () {
 
         //the array for the gameboard i.e. what should be displayed on the screen
@@ -33,12 +34,23 @@ export default function objManip() {
             },
         }
     })();
-    
-    document.getElementById("titleHead").addEventListener("click", function(){
-        console.log(projectList.getArray())
-        console.log(projectList.getController())
-        projectList.nextTurn()
-        const newProject = new createProjectObject("todoList", "0Proj")
+
+    function makeDefaultProject() {        
+        const defaultProject = new createProjectObject("TodoList", "0Project");
+        projectList.addNewProject(defaultProject);
+    }
+
+    makeDefaultProject()
+
+    document.getElementById("submitButton").addEventListener("click", function(){
+        let projectNo = getProjectNo()
+        projectNo -= 1
+
+        let newProjectValue = document.getElementById('textInput').value;
+        console.log(newProjectValue)
+
+        const newProject = new createProjectObject(newProjectValue, `${projectNo}Project`)
         projectList.addNewProject(newProject)
+        console.log(projectList.getArray())
     });
 }
