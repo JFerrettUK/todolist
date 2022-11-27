@@ -1,8 +1,7 @@
 //Create a project and allow tasks to be appended to it
 
 export default class Project {
-    constructor(name, id) {
-        this.name = name;
+    constructor(id) {
         this.id = id;
         this.tasks = []
     };

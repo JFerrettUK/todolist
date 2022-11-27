@@ -90,7 +90,7 @@ export default function domManip() {
         const input = createTaskArray(array);
         createTaskBox(input);
         closeTaskBox();
-        addDeleteListeners()
+        addDeleteListeners();
     });
 
     addDeleteListeners();

@@ -7,6 +7,6 @@ import projectManip from './projectManip';
 
 export default function siteLogic() {
     makeProjectHeader("TodoList");
-    domManip();
     projectManip();
+    domManip();
 }
