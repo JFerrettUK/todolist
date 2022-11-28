@@ -2,6 +2,7 @@
 
 export default function createTaskArray(taskArray) {
     const jsNameHere = taskArray[0];
+    console.log(taskArray[1])
     const titleHere = taskArray[1];
     const projectHere = taskArray[2];
     const priorityHere = taskArray[3];

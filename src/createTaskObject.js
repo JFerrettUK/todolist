@@ -17,6 +17,26 @@ export default class Task {
         this.dueDate = dueDate;
     };
 
+    getJsName() {
+        return this.jsName;
+    }
+
+    getTaskName() {
+        return this.taskName;
+    }
+
+    getProjectName() {
+        return this.projectName;
+    }
+
+    getPriority(newPriority) {
+        return this.priority;
+    }
+
+    getShortDesc() {
+        return this.shortDesc;
+    }
+
     editJsName(newJsName) {
         this.jsName = newJsName;
     }

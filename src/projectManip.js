@@ -1,11 +1,12 @@
-import createProjectObject from './createProjectObject';
-import createTaskObject from './createProjectObject';
+import Project from './createProjectObject';
+import Task from './createTaskObject';
 import getProjectNo from './getProjectNo';
 import submitNewProject from './submitNewProject';
 import createInputTaskArray from './createInputTaskArray';
 import createTaskArray from './createTaskArray';
 import createTaskBox from './createTaskBox';
 import closeTaskBox from './closeTaskBox';
+import { create } from 'lodash';
 
 
 export default function projectManip() {
@@ -36,7 +37,7 @@ export default function projectManip() {
     })();
 
     function makeDefaultProject() {        
-        const defaultProject = new createProjectObject("0Project");
+        const defaultProject = new Project("0Project", "TodoList");
         projectList.addNewProject(defaultProject);
     }
 
@@ -48,27 +49,28 @@ export default function projectManip() {
 
     submitButton.addEventListener("click", function (){
         let projectNo = getProjectNo();
-        projectNo -= 1;
 
-        const newProject = new createProjectObject(`${projectNo}Project`);
+        const nameProjValue = document.getElementById('textInput').value;
+
+        const newProject = new Project(`${projectNo}Project`, nameProjValue);
         projectList.addNewProject(newProject);
+        console.log(projectList.getArray())
     });
 
-    //add a task to projectList [1]
-    submitButton.addEventListener("click", function (){
-        const testValue = document.getElementById('textInput').value;
-        console.log(testValue)
-        console.log(projectList.getProject(1));
-    });
+    //add a task to projectList [0]
+    const taskSubmitButton = document.getElementById("taskSubmitButton")
 
+    taskSubmitButton.addEventListener("click", function (){
+        let array = createInputTaskArray()
+        console.log(array)
 
-    //create a task object
-    const submitTask = document.getElementById("taskSubmitButton");
-
-    submitTask.addEventListener("click", function (){
-        const array = createInputTaskArray();
+        //issues here and below
         const input = createTaskArray(array);
-        const defaultProject = new createTaskObject(input);
-        console.log(defaultProject);
+        console.log(input.task())
+        console.log(input)
+
+        const arrayObj = new Task(input);
+        console.log(arrayObj);
+        console.log(arrayObj.getTaskName());
     });
 }
