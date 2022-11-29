@@ -1,19 +1,19 @@
 //Create an object with a project name
 
 export default class Task {
-    constructor(taskArray) {
-        let jsName = taskArray[0];
-        let taskName = taskArray[1];
-        let projectName = taskArray[2];
-        let priority = taskArray[3];
-        let shortDesc = taskArray[4];
-        let dueDate = taskArray[5];
-    
+    constructor(input) {
+        let jsName = input.jsName();
+        let taskName = input.task();
+        let projectHere = input.project();
+        let priorityLevel = input.priority();
+        let description = input.description();
+        let dueDate = input.dueDate();
+        
         this.jsName = jsName;
         this.taskName = taskName;
-        this.projectName = projectName;
-        this.priority = priority;
-        this.shortDesc = shortDesc;
+        this.projectName = projectHere;
+        this.priority = priorityLevel;
+        this.shortDesc = description;
         this.dueDate = dueDate;
     };
 

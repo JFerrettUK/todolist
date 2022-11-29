@@ -1,12 +1,9 @@
 import Project from './createProjectObject';
 import Task from './createTaskObject';
 import getProjectNo from './getProjectNo';
-import submitNewProject from './submitNewProject';
 import createInputTaskArray from './createInputTaskArray';
 import createTaskArray from './createTaskArray';
-import createTaskBox from './createTaskBox';
-import closeTaskBox from './closeTaskBox';
-import { create } from 'lodash';
+import getAssignedProjectAsNo from './getAssignedProjectAsNo';
 
 
 export default function projectManip() {
@@ -14,10 +11,7 @@ export default function projectManip() {
 
         //the array for the gameboard i.e. what should be displayed on the screen
         let projectList = []
-    
-        //turn order variable -- who's controlling the game?
-        let controller = 0;
-    
+       
         return {
             //get the entire array of projects
             getArray: function() { 
@@ -30,9 +24,15 @@ export default function projectManip() {
             },
 
             //add a new project to the array
-            addNewProject: function(todoListProject) {
-                projectList.push(todoListProject)
+            addNewProject: function(projectHere) {
+                projectList.push(projectHere)
             },
+
+            //add a new project to the array
+            replaceProject: function(whichProject, replacementArray) {
+                projectList.splice(whichProject, 1, replacementArray)
+            },
+            
         }
     })();
 
@@ -61,16 +61,19 @@ export default function projectManip() {
     const taskSubmitButton = document.getElementById("taskSubmitButton")
 
     taskSubmitButton.addEventListener("click", function (){
+        //make the task from inputs
         let array = createInputTaskArray()
-        console.log(array)
-
-        //issues here and below
         const input = createTaskArray(array);
-        console.log(input.task())
-        console.log(input)
-
         const arrayObj = new Task(input);
-        console.log(arrayObj);
-        console.log(arrayObj.getTaskName());
+
+        //append the task in the relevant project
+
+        const whichProject = getAssignedProjectAsNo();
+
+        let project = projectList.getProject(whichProject);
+        project.appendTask(arrayObj);
+
+        projectList.replaceProject(whichProject, project);
+        console.log(projectList.getProject(whichProject));
     });
 }
