@@ -139,7 +139,7 @@ body {
     #titleHead {
         border-radius: 30px;
         background-color: #E94560;
-        min-width: 460px;
+        min-width: 530px;
         height:70px;
         display: flex;
         justify-content: center;
@@ -155,7 +155,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-width: 460px;
+            min-width: 530px;
         }
 
             .newTaskBox {
@@ -181,11 +181,11 @@ body {
             }
 
 
-            #taskFormCont {
-                display: none;
-                justify-content: center;
-                min-width: 460px;
-            }    
+        #taskFormCont {
+            display: none;
+            justify-content: center;
+            min-width: 530px;
+        }    
 
             #addTaskForm {
                 display: grid;
@@ -223,15 +223,64 @@ body {
                 }
             
 
+        .editTaskFormCont {
+            display: none;
+            justify-content: center;
+            min-width: 530px;
+        }    
+
+            .editText {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .editTaskForm {
+                display: grid;
+                gap: 5px;
+            }
+
+            .editTextTaskInput {
+                width: 250px;
+            }
+
+            .editTaskSubmitBtns {
+                display:flex;
+                gap: 5px;
+            }
+
+                .editTaskSubmitButton {
+                    background-color: #0F3460;
+                }
+
+                .editTaskCancelButton {
+                    background-color: #E94560;
+                }
+
+                .editTaskButtonForm {
+                    display: inline-block;
+                    border: 1px solid #ffffff;
+                    text-align: center;
+                    border-radius: 5px;
+                    vertical-align: top;
+                    font-size: 14px;
+                    min-height: 28px;
+                    min-width: 122px;
+                    line-height: 1.29;
+                    color: #ffffff;
+                }
+            
         .taskBox {
             border-radius: 30px;
             background-color: #d8cdcf;
             height:35px;
-            min-width: 460px;
+            min-width: 530px;
             color:#0F3460;
             display: grid;
             align-items: center;
-            grid-template-columns: 20px 150px 1fr 150px 100px 50px;
+            grid-template-columns: 20px 150px 1fr 150px 100px 35px 50px;
         }
 
             .taskBoxStart {
@@ -257,6 +306,15 @@ body {
             }
 
             .trashIcon {
+                display: grid;
+                margin-left: 9px;
+                justify-content: center;
+                height: 25px;
+                filter: opacity(40%);
+                width: 25px;
+            }
+
+            .editIcon {
                 display: grid;
                 margin-left: 9px;
                 justify-content: center;

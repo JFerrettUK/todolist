@@ -62,6 +62,11 @@ export default function projectManip() {
 
     taskSubmitButton.addEventListener("click", function (){
         //make the task from inputs
+
+        if (document.getElementById('dueDate').value == '') {
+            return
+        }
+
         let array = createInputTaskArray()
         const input = createTaskArray(array);
         const arrayObj = new Task(input);
@@ -76,4 +81,5 @@ export default function projectManip() {
         projectList.replaceProject(whichProject, project);
         console.log(projectList.getProject(whichProject));
     });
+
 }

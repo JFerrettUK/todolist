@@ -34,6 +34,9 @@ import createTaskArray from './createTaskArray';
 //create an OBJ in the HTML from input
 import createTaskBox from './createTaskBox';
 
+//Adds edit listeners dependant on the number of task boxes
+import addEditListeners from './addEditListeners';
+
 //Adds delete listeners dependant on the number of task boxes
 import addDeleteListeners from './addDeleteListeners';
 
@@ -42,6 +45,7 @@ import createInputTaskArray  from './createInputTaskArray';
 
 //Create an array from the task input form
 import createProjectTaskOption  from './createProjectTaskOption';
+
 
 export default function domManip() {
     const projectNavMenu = document.getElementById("projectHeader");
@@ -88,10 +92,17 @@ export default function domManip() {
     submitTask.addEventListener("click", function (){
         const array = createInputTaskArray();
         const input = createTaskArray(array);
+        if (document.getElementById('dueDate').value == '') {
+            alert("Set the due date!")
+            closeTaskBox();
+            return
+          }      
         createTaskBox(input);
         closeTaskBox();
         addDeleteListeners();
+        addEditListeners();
     });
 
     addDeleteListeners();
+    addEditListeners();
 }

@@ -58,5 +58,13 @@ let countAll = getLastBox()
         const trash12 = document.getElementById("12Trash");
 
         trash12.addEventListener('click', () => {deleteTaskBox(12)});
+    } else if (countAll == 14) {
+        const trash13 = document.getElementById("13Trash");
+
+        trash12.addEventListener('click', () => {deleteTaskBox(13)});
+    } else if (countAll == 15) {
+        const trash14 = document.getElementById("14Trash");
+
+        trash14.addEventListener('click', () => {deleteTaskBox(14)});
     }
 }

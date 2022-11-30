@@ -16,6 +16,7 @@ export default function createTaskBox(input) {
 
     const truePriority = capitalizeFirstLetter(priorityLevel)
 
+    //check due date
     const mainHeader = document.getElementById('page-main');
     const breakBox = document.createElement('br');
 
@@ -50,6 +51,10 @@ export default function createTaskBox(input) {
     priorityBox.setAttribute("id", `${boxNo}Priority`);   
     priorityBox.textContent = `${truePriority}`;
 
+    const editIcon = document.createElement('img');
+    editIcon.setAttribute("class", "editIcon");
+    editIcon.setAttribute("id", `${boxNo}Edit`);   
+
     const trashIcon = document.createElement('img');
     trashIcon.setAttribute("class", "trashIcon");
     trashIcon.setAttribute("id", `${boxNo}Trash`);   
@@ -62,7 +67,12 @@ export default function createTaskBox(input) {
     taskBox.appendChild(divider);
     taskBox.appendChild(dueDateBox);
     taskBox.appendChild(priorityBox);
+    taskBox.appendChild(editIcon);
     taskBox.appendChild(trashIcon);
 
     document.getElementById(`${boxNo}Trash`).src="./trash.png";
+    document.getElementById(`${boxNo}Edit`).src="./edit.png";
+
+    //make editTask below and hidden
+
 }
