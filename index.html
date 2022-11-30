@@ -56,6 +56,33 @@
             </div>
           </form>
         </div>
+        <div class="editTaskFormCont">
+          <div class="editText">Edit Task...</div>
+          <form class="editTaskForm">
+            <label class=editTaskNameLabel for="editTaskNameInput">Task name:</label>
+            <input type="editText" class="editTaskNameInput" name="editTaskNameInput" placeholder="Name of task" minlength="3" maxlength="20">
+            <label class=editProjectLabel for="editProjectList">Project:</label>
+            <select class="editProjectList" type="select" name="editProjectList">
+              <option class="newProjects" id="0EditProject">TodoList</option>
+            </select>
+            <label class="editPriorityLabel" for="editPriorityList">Priority:</label>
+            <select class="editPriorityList" type="select" name="editPriority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+            </select>
+              <label class=editShortDescLabel for="editShortDescInput">Short description:</label>
+            <input type="text" class="editShortDescInput" name="editShortDescInput" placeholder="Describe your project" minlength="3" maxlength="54">
+            </select>
+            <label for="editDueDate">Due date:</label>
+            <input type="date" class="editDueDate" name="editDueDate">
+            <div class="editTaskSubmitBtns">
+              <button type="button" class="editTaskSubmitButton" class="taskButtonForm">Submit</button>
+              <button type="button" class="editTaskCancelButton" class="taskButtonForm">Cancel</button>
+            </div>
+          </form>
+        </div>
       </main>
       <aside class="page-sidebar">
         <div id="inboxText">
