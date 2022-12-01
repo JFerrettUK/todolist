@@ -73,6 +73,102 @@ export default function createTaskBox(input) {
     document.getElementById(`${boxNo}Trash`).src="./trash.png";
     document.getElementById(`${boxNo}Edit`).src="./edit.png";
 
-    //make editTask below and hidden
+    //make editTask attached in the news task box
+
+    const editTaskFormCont = document.createElement('div');
+    editTaskFormCont.setAttribute("class", "editTaskFormCont");
+    editTaskFormCont.setAttribute("id", `${boxNo}editCont`)
+    taskCont.appendChild(editTaskFormCont);
+
+    const editText = document.createElement('div');
+    editText.setAttribute("class", "editText");
+    editText.innerText = "Edit Task..."
+    editTaskFormCont.appendChild(editText);
+
+    const editTaskForm = document.createElement('form');
+    editTaskForm.setAttribute("class", "editTaskForm");
+    editTaskFormCont.appendChild(editTaskForm);
+
+    const editTaskNameLabel = document.createElement('label');
+    editTaskNameLabel.setAttribute("class", "editTaskNameLabel");
+    editTaskNameLabel.setAttribute("for", "editTaskNameInput");
+    editTaskNameLabel.innerText = "Task Name:"
+    editTaskForm.appendChild(editTaskNameLabel);
+
+    const editTaskNameInput = document.createElement('input');
+    editTaskNameInput.setAttribute("class", "editTaskNameInput");
+    editTaskNameInput.setAttribute("type", "editText");
+    editTaskNameInput.setAttribute("name", "editTaskNameInput");
+    editTaskNameInput.setAttribute("placeholder", "Name of task");
+    editTaskNameInput.setAttribute("minlength", "3");
+    editTaskNameInput.setAttribute("maxlength", "20");
+    editTaskForm.appendChild(editTaskNameInput);
+
+    const editPriorityLabel = document.createElement('label');
+    editPriorityLabel.setAttribute("class", "editPriorityLabel");
+    editPriorityLabel.setAttribute("for", "editPriorityList");
+    editPriorityLabel.innerText = "Priority:"
+    editTaskForm.appendChild(editPriorityLabel);
+
+    const editPriorityList = document.createElement('select');
+    editPriorityList.setAttribute("class", "editPriorityList");
+    editPriorityList.setAttribute("type", "select");
+    editPriorityList.setAttribute("name", "editPriority");
+    editTaskForm.appendChild(editPriorityList);
+
+    const low = document.createElement('option');
+    low.innerText = "Low"
+    editPriorityList.appendChild(low);
+
+    const medium = document.createElement('option');
+    medium.innerText = "Medium"
+    editPriorityList.appendChild(medium);
+
+    const high = document.createElement('option');
+    high.innerText = "High"
+    editPriorityList.appendChild(high);
+
+    const editShortDescLabel = document.createElement('label');
+    editShortDescLabel.setAttribute("class", "editShortDescLabel");
+    editShortDescLabel.setAttribute("for", "editShortDescInput");
+    editShortDescLabel.innerText = "Short Description:"
+    editTaskForm.appendChild(editShortDescLabel);
+
+    const editShortDescInput = document.createElement('input');
+    editShortDescInput.setAttribute("class", "editShortDescInput");
+    editShortDescInput.setAttribute("type", "text");
+    editShortDescInput.setAttribute("name", "editShortDescInput");
+    editShortDescInput.setAttribute("placeholder", "Describe your project");
+    editShortDescInput.setAttribute("minlength", "3");
+    editShortDescInput.setAttribute("maxlength", "54");
+    editTaskForm.appendChild(editShortDescInput);
+
+    const editDueDateLabel = document.createElement('label');
+    editDueDateLabel.setAttribute("class", "editDueDateLabel");
+    editDueDateLabel.setAttribute("for", "editDueDate");
+    editDueDateLabel.innerText = "Due Date:"
+    editTaskForm.appendChild(editDueDateLabel);
+
+    const editDueDate = document.createElement('input');
+    editDueDate.setAttribute("class", "editDueDate");
+    editDueDate.setAttribute("type", "date");
+    editDueDate.setAttribute("name", "editDueDate");
+    editTaskForm.appendChild(editDueDate);
+
+    const editTaskSubmitBtns = document.createElement('div');
+    editTaskSubmitBtns.setAttribute("class", "editTaskSubmitBtns");
+    editTaskFormCont.appendChild(editTaskSubmitBtns);
+
+    const editTaskSubmitButton = document.createElement('button');
+    editTaskSubmitButton.setAttribute("class", "editTaskSubmitButton taskButtonForm");
+    editTaskSubmitButton.innerText = "Submit:"    
+    editTaskSubmitButton.setAttribute("type", "button");
+    editTaskSubmitBtns.appendChild(editTaskSubmitButton);
+
+    const editTaskCancelButton = document.createElement('button');
+    editTaskCancelButton.setAttribute("class", "editTaskCancelButton taskButtonForm");
+    editTaskCancelButton.innerText = "Cancel:"    
+    editTaskCancelButton.setAttribute("type", "button");
+    editTaskSubmitBtns.appendChild(editTaskCancelButton);
 
 }

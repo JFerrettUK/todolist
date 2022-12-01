@@ -1,6 +1,6 @@
-//Show the "add new task" form
+//Show the "edit new task" form
 
-export default function showTaskBox() {
-    document.getElementById(`newTaskCont`).style.display = "none";
-    document.getElementsByClassName(`editTaskFormCont`).style.display = "grid";
+export default function showTaskBox(boxNo) {
+    console.log("showTaskBox")
+    document.getElementById(`${boxNo}EditCont`).style.display = "grid";
 }
