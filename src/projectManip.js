@@ -82,4 +82,29 @@ export default function projectManip() {
         console.log(projectList.getProject(whichProject));
     });
 
+    // RELEVANTEDITTASKSAVEHERE.addEventListener("click", function (){
+    //     //make the task from inputs
+
+    //     if (document.getElementById('dueDate').value == '') {
+    //         return
+    //     }
+
+
+
+    //     let array = createInputEditTaskArray(boxNo)
+    //     const input = createTaskArray(array);
+    //     const arrayObj = new Task(input);
+
+    //     //append the task in the relevant project
+
+    //     const whichProject = getAssignedProjectAsNo();
+
+    //     let project = projectList.getProject(whichProject);
+    //     project.appendTask(arrayObj);
+
+    //     projectList.replaceProject(whichProject, project);
+    //     console.log(projectList.getProject(whichProject));
+    // });
+
+
 }

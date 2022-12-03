@@ -246,6 +246,10 @@ body {
                 margin-bottom: 10px;
             }
 
+            .projectAssignment {
+                display: none;
+            }
+
             .editTaskForm {
                 display: grid;
                 gap: 5px;

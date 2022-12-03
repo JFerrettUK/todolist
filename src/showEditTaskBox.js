@@ -2,5 +2,5 @@
 
 export default function showTaskBox(boxNo) {
     console.log("showTaskBox")
-    document.getElementById(`${boxNo}EditCont`).style.display = "grid";
+    document.getElementById(`${boxNo}editCont`).style.display = "grid";
 }
