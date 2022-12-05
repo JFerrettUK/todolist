@@ -1,9 +1,13 @@
+
+
 import Project from './createProjectObject';
 import Task from './createTaskObject';
 import getProjectNo from './getProjectNo';
-import createInputTaskArray from './createInputTaskArray';
+import createInputEditTaskArray from './createInputEditTaskArray';
 import createTaskArray from './createTaskArray';
 import getAssignedProjectAsNo from './getAssignedProjectAsNo';
+import addEditProjectManipListeners from './addEditProjectManipListeners';
+import getLastBox from './getLastBox';
 
 
 export default function projectManip() {
@@ -45,66 +49,22 @@ export default function projectManip() {
 
     //creates a new project with same name as drop input (in "projectList" / 
     //named "[no]Project") and header IDs ("[no]ProjectHead")
-    const submitButton = document.getElementById("submitButton")
+    const projectSubmitButton = document.getElementById("submitButton")
 
-    submitButton.addEventListener("click", function (){
+    projectSubmitButton.addEventListener("click", function (){
         let projectNo = getProjectNo();
 
         const nameProjValue = document.getElementById('textInput').value;
 
         const newProject = new Project(`${projectNo}Project`, nameProjValue);
         projectList.addNewProject(newProject);
-        console.log(projectList.getArray())
     });
 
-    //add a task to projectList [0]
     const taskSubmitButton = document.getElementById("taskSubmitButton")
 
     taskSubmitButton.addEventListener("click", function (){
-        //make the task from inputs
-
-        if (document.getElementById('dueDate').value == '') {
-            return
-        }
-
-        let array = createInputTaskArray()
-        const input = createTaskArray(array);
-        const arrayObj = new Task(input);
-
-        //append the task in the relevant project
-
-        const whichProject = getAssignedProjectAsNo();
-
-        let project = projectList.getProject(whichProject);
-        project.appendTask(arrayObj);
-
-        projectList.replaceProject(whichProject, project);
-        console.log(projectList.getProject(whichProject));
+        addEditProjectManipListeners()
     });
 
-    // RELEVANTEDITTASKSAVEHERE.addEventListener("click", function (){
-    //     //make the task from inputs
-
-    //     if (document.getElementById('dueDate').value == '') {
-    //         return
-    //     }
-
-
-
-    //     let array = createInputEditTaskArray(boxNo)
-    //     const input = createTaskArray(array);
-    //     const arrayObj = new Task(input);
-
-    //     //append the task in the relevant project
-
-    //     const whichProject = getAssignedProjectAsNo();
-
-    //     let project = projectList.getProject(whichProject);
-    //     project.appendTask(arrayObj);
-
-    //     projectList.replaceProject(whichProject, project);
-    //     console.log(projectList.getProject(whichProject));
-    // });
-
-
+    addEditProjectManipListeners()
 }

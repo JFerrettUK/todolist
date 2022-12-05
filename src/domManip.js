@@ -46,6 +46,9 @@ import createInputTaskArray  from './createInputTaskArray';
 //Create an array from the task input form
 import createProjectTaskOption  from './createProjectTaskOption';
 
+//Create an array from the task input form
+import addEditProjectManipListeners  from './addEditProjectManipListeners';
+
 
 export default function domManip() {
     const projectNavMenu = document.getElementById("projectHeader");
