@@ -97,7 +97,6 @@ export default function domManip() {
         const input = createTaskArray(array);
         if (document.getElementById('dueDate').value == '') {
             alert("Set the due date!")
-            closeTaskBox();
             return
           }      
         createTaskBox(input);

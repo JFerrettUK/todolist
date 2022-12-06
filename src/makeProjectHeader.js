@@ -7,7 +7,6 @@ export default function makeProjectHeader(projectName) {
     const breakPoint = document.createElement('br');
 
     if (projectName.length < 4) {
-        alert("Project name must be at least 4 characters long");
         return;
     } else {
         let projectNo = minus1ProjectNo()

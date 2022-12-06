@@ -9,6 +9,10 @@ export default function createProjectTaskOption() {
     const newProjectValue = submitNewProject();
     const projectList = document.getElementById('projectList');
 
+    if (newProjectValue.length < 4) {
+        return;
+    }
+
     const newOption = document.createElement('option');
     newOption.setAttribute("class", `newProjects`);
     newOption.setAttribute("id", `${numberOfProj}Project`);
