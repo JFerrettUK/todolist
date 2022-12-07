@@ -44,7 +44,7 @@ export default function createTaskBox(input) {
 
     const dueDateBox = document.createElement('span');
     dueDateBox.setAttribute("id", `${boxNo}Date`);   
-    dueDateBox.textContent = `Due: ${dueDate}`;
+    dueDateBox.textContent = `${dueDate}`;
 
     const priorityBox = document.createElement('span');
     priorityBox.setAttribute("class", "priorityBox");
@@ -59,6 +59,11 @@ export default function createTaskBox(input) {
     trashIcon.setAttribute("class", "trashIcon");
     trashIcon.setAttribute("id", `${boxNo}Trash`);   
 
+    const assignedProject = document.createElement('div');
+    assignedProject.setAttribute("class", `projectAssignment`);
+    assignedProject.setAttribute("id", `${boxNo}`)
+    assignedProject.innerText = `${projectHere}`
+
     mainHeader.appendChild(taskCont);
     taskCont.appendChild(breakBox);
     taskCont.appendChild(taskBox);
@@ -69,6 +74,7 @@ export default function createTaskBox(input) {
     taskBox.appendChild(priorityBox);
     taskBox.appendChild(editIcon);
     taskBox.appendChild(trashIcon);
+    taskBox.appendChild(assignedProject);
 
     document.getElementById(`${boxNo}Trash`).src="./trash.png";
     document.getElementById(`${boxNo}Edit`).src="./edit.png";
@@ -85,12 +91,6 @@ export default function createTaskBox(input) {
     editText.setAttribute("id", `${boxNo}editText`)
     editText.innerText = `Edit ${taskName}`
     editTaskFormCont.appendChild(editText);
-
-    const assignedProject = document.createElement('div');
-    assignedProject.setAttribute("class", `projectAssignment`);
-    assignedProject.setAttribute("id", `${boxNo}ProjectAssignment`)
-    assignedProject.innerText = `${projectHere}`
-    editTaskFormCont.appendChild(assignedProject);
 
     const editTaskForm = document.createElement('form');
     editTaskForm.setAttribute("class", "editTaskForm");
@@ -189,5 +189,10 @@ export default function createTaskBox(input) {
     editTaskCancelButton.setAttribute("type", "button");
     editTaskCancelButton.setAttribute("id", `${boxNo}editTaskCancelButton`)
     editTaskSubmitBtns.appendChild(editTaskCancelButton);
+
+    const jsNameHere = document.createElement('div');
+    jsNameHere.setAttribute("class", `${boxNo}jsName`);
+    jsNameHere.setAttribute("id", `${jsName}`)
+    editTaskFormCont.appendChild(jsNameHere);
 
 }

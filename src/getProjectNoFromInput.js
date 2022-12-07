@@ -1,9 +1,4 @@
-export default function getAssignedProjectAsNo() {
-    //set assigned project
-    let projectOption = document.querySelector('#projectList');
-    const projectNo = projectOption.options[projectOption.selectedIndex].id;
-
-
+export default function getAssignedProjectAsNo(projectNo) {
     if (projectNo == "0Project") {
         let assignedProject = 0;
         return assignedProject

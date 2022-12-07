@@ -6,6 +6,7 @@ import createTaskArray from './createTaskArray';
 import createInputTaskArray from './createInputTaskArray';
 import getAssignedProjectAsNo from './getAssignedProjectAsNo';
 import getLastBox from './getLastBox';
+import getProjectNoFromInput from './getProjectNoFromInput';
 
 
 export default function projectManip() {
@@ -76,6 +77,11 @@ export default function projectManip() {
         const input = createTaskArray(array);
         const arrayObj = new Task(input);
 
+        //stop if due date not working
+        if (document.getElementById('dueDate').value == '') {
+            return
+        }      
+
         //append the task in the relevant project
 
         const whichProject = getAssignedProjectAsNo();
@@ -96,107 +102,117 @@ export default function projectManip() {
         if (boxNo == 0) {
             return
         } else if (boxNo == 1) {
-            const saveEdit0 = document.getElementById("0editTaskSubmitButton");
-            saveEdit0.addEventListener('click', () => {
-                let array = createInputEditTaskArray(0);
-                console.log(array)
+            const saveTaskEdit0 = document.getElementById("0editTaskSubmitButton");
+            saveTaskEdit0.addEventListener('click', () => {
+                //save new task data as an array
+                let inputArray = createInputEditTaskArray(0, jsNameHere);
+                console.log(inputArray)
+
+                //get the assigned project number
+                let assignedProject = inputArray[2]
+                let relevantNo = getProjectNoFromInput(assignedProject)
+
+                //get the assigned project object
+                let project = projectList.getProject(relevantNo)
+
+                //get the assigned task number
+                
+
                 return 
             });   
         } else if (boxNo == 2) {
-            const saveEdit1 = document.getElementById("1editTaskSubmitButton");
-            saveEdit1.addEventListener('click', () => {
+            const saveTaskEdit1 = document.getElementById("1editTaskSubmitButton");
+            saveTaskEdit1.addEventListener('click', () => {
                 let array = createInputEditTaskArray(1);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 3) {
-            const saveEdit2 = document.getElementById("2editTaskSubmitButton");
-            saveEdit2.addEventListener('click', () => {console.log("test2")});       
-            saveEdit2.addEventListener('click', () => {
+            const saveTaskEdit2 = document.getElementById("2editTaskSubmitButton");
+            saveTaskEdit2.addEventListener('click', () => {
                 let array = createInputEditTaskArray(2);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 4) {
-            const saveEdit3 = document.getElementById("3editTaskSubmitButton");
-            saveEdit3.addEventListener('click', () => {
+            const saveTaskEdit3 = document.getElementById("3editTaskSubmitButton");
+            saveTaskEdit3.addEventListener('click', () => {
                 let array = createInputEditTaskArray(3);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 5) {
-            const saveEdit4 = document.getElementById("4editTaskSubmitButton");
-            saveEdit4.addEventListener('click', () => {
+            const saveTaskEdit4 = document.getElementById("4editTaskSubmitButton");
+            saveTaskEdit4.addEventListener('click', () => {
                 let array = createInputEditTaskArray(4);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 6) {
-            const saveEdit5 = document.getElementById("5editTaskSubmitButton");
-            saveEdit5.addEventListener('click', () => {createInputEditTaskArray(5)});
-            saveEdit5.addEventListener('click', () => {
+            const saveTaskEdit5 = document.getElementById("5editTaskSubmitButton");
+            saveTaskEdit5.addEventListener('click', () => {
                 let array = createInputEditTaskArray(5);
                 console.log(array)
                 return array
             });   
-            const saveEdit6 = document.getElementById("6editTaskSubmitButton");
-            saveEdit6.addEventListener('click', () => {
+            const saveTaskEdit6 = document.getElementById("6editTaskSubmitButton");
+            saveTaskEdit6.addEventListener('click', () => {
                 let array = createInputEditTaskArray(6);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 8) {
-            const saveEdit7 = document.getElementById("7editTaskSubmitButton");
-            saveEdit7.addEventListener('click', () => {
+            const saveTaskEdit7 = document.getElementById("7editTaskSubmitButton");
+            saveTaskEdit7.addEventListener('click', () => {
                 let array = createInputEditTaskArray(7);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 9) {
-            const saveEdit8 = document.getElementById("8editTaskSubmitButton");
-            saveEdit8.addEventListener('click', () => {
+            const saveTaskEdit8 = document.getElementById("8editTaskSubmitButton");
+            saveTaskEdit8.addEventListener('click', () => {
                 let array = createInputEditTaskArray(8);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 10) {
-            const saveEdit9 = document.getElementById("9editTaskSubmitButton");
-            saveEdit9.addEventListener('click', () => {
+            const saveTaskEdit9 = document.getElementById("9editTaskSubmitButton");
+            saveTaskEdit9.addEventListener('click', () => {
                 let array = createInputEditTaskArray(9);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 11) {
-            const saveEdit10 = document.getElementById("10editTaskSubmitButton");
-            saveEdit10.addEventListener('click', () => {
+            const saveTaskEdit10 = document.getElementById("10editTaskSubmitButton");
+            saveTaskEdit10.addEventListener('click', () => {
                 let array = createInputEditTaskArray(10);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 12) {
-            const saveEdit11 = document.getElementById("11editTaskSubmitButton");
-            saveEdit11.addEventListener('click', () => {
+            const saveTaskEdit11 = document.getElementById("11editTaskSubmitButton");
+            saveTaskEdit11.addEventListener('click', () => {
                 let array = createInputEditTaskArray(11);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 13) {
-            const saveEdit12 = document.getElementById("12editTaskSubmitButton");
-            saveEdit12.addEventListener('click', () => {
+            const saveTaskEdit12 = document.getElementById("12editTaskSubmitButton");
+            saveTaskEdit12.addEventListener('click', () => {
                 let array = createInputEditTaskArray(12);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 14) {
-            const saveEdit13 = document.getElementById("13editTaskSubmitButton");
-            saveEdit13.addEventListener('click', () => {
+            const saveTaskEdit13 = document.getElementById("13editTaskSubmitButton");
+            saveTaskEdit13.addEventListener('click', () => {
                 let array = createInputEditTaskArray(13);
                 console.log(array)
                 return array
             });   
         } else if (boxNo == 15) {
-            const saveEdit14 = document.getElementById("14editTaskSubmitButton");
-            saveEdit14.addEventListener('click', () => {
+            const saveTaskEdit14 = document.getElementById("14editTaskSubmitButton");
+            saveTaskEdit14.addEventListener('click', () => {
                 let array = createInputEditTaskArray(14);
                 console.log(array)
                 return array

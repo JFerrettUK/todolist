@@ -2,8 +2,8 @@
 
 import getLastBox from './getLastBox';
 
-export default function createInputTaskArray(boxNo) {
-    const jsName = getLastBox();
+export default function createInputTaskArray(boxNo, jsNameHere) {
+    const jsName = jsNameHere;
     const taskNameInput = document.getElementById(`${boxNo}editTaskNameInput`).value;
     const priorityList = document.getElementById(`${boxNo}editPriorityList`).value;
     const shortDescInput = document.getElementById(`${boxNo}editShortDescInput`).value;
