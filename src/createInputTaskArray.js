@@ -3,7 +3,7 @@
 import getLastBox from './getLastBox';
 
 export default function createInputTaskArray() {
-    const jsName = getLastBox();
+    const taskNo = getLastBox();
     const taskNameInput = document.getElementById('taskNameInput').value;
     const priorityList = document.getElementById('priorityList').value;
     const shortDescInput = document.getElementById('shortDescInput').value;
@@ -14,7 +14,7 @@ export default function createInputTaskArray() {
     const projectNo = projectOption.options[projectOption.selectedIndex].id;
 
     const taskArray = [];
-    taskArray.push(jsName);
+    taskArray.push(taskNo);
     taskArray.push(taskNameInput);
     taskArray.push(projectNo);
     taskArray.push(priorityList);

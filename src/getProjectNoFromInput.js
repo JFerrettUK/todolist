@@ -1,4 +1,4 @@
-export default function getAssignedProjectAsNo(projectNo) {
+export default function getProjectNoFromInput(projectNo) {
     if (projectNo == "0Project") {
         let assignedProject = 0;
         return assignedProject

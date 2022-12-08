@@ -7,7 +7,7 @@ import createInputTaskArray from './createInputTaskArray';
 import getAssignedProjectAsNo from './getAssignedProjectAsNo';
 import getLastBox from './getLastBox';
 import getProjectNoFromInput from './getProjectNoFromInput';
-
+import getProjectNoFromDOM from './getProjectNoFromDOM';
 
 export default function projectManip() {
     const projectList = (function () {
@@ -104,29 +104,23 @@ export default function projectManip() {
         } else if (boxNo == 1) {
             const saveTaskEdit0 = document.getElementById("0editTaskSubmitButton");
             saveTaskEdit0.addEventListener('click', () => {
-                //save new task data as an array
-                let inputArray = createInputEditTaskArray(0, jsNameHere);
-                console.log(inputArray)
-
                 //get the assigned project number
-                let assignedProject = inputArray[2]
-                let relevantNo = getProjectNoFromInput(assignedProject)
+                let assignedProject = getProjectNoFromDOM(0)
+                let projectNo = getProjectNoFromInput(assignedProject)
 
                 //get the assigned project object
-                let project = projectList.getProject(relevantNo)
+                let project = projectList.getProject(projectNo)
+
+                //save new task data as an array
+                let inputArray = createInputEditTaskArray(0);
+                console.log(inputArray)
 
                 //get the assigned task number
                 
-
                 return 
             });   
         } else if (boxNo == 2) {
-            const saveTaskEdit1 = document.getElementById("1editTaskSubmitButton");
-            saveTaskEdit1.addEventListener('click', () => {
-                let array = createInputEditTaskArray(1);
-                console.log(array)
-                return array
-            });   
+
         } else if (boxNo == 3) {
             const saveTaskEdit2 = document.getElementById("2editTaskSubmitButton");
             saveTaskEdit2.addEventListener('click', () => {

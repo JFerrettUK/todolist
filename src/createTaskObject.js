@@ -2,14 +2,14 @@
 
 export default class Task {
     constructor(input) {
-        let jsName = input.jsName();
+        let taskNo = input.taskNo();
         let taskName = input.task();
         let projectHere = input.project();
         let priorityLevel = input.priority();
         let description = input.description();
         let dueDate = input.dueDate();
         
-        this.jsName = jsName;
+        this.taskNo = taskNo;
         this.taskName = taskName;
         this.projectName = projectHere;
         this.priority = priorityLevel;
@@ -17,8 +17,8 @@ export default class Task {
         this.dueDate = dueDate;
     };
 
-    getJsName() {
-        return this.jsName;
+    gettaskNo() {
+        return this.taskNo;
     }
 
     getTaskName() {
@@ -37,8 +37,8 @@ export default class Task {
         return this.shortDesc;
     }
 
-    editJsName(newJsName) {
-        this.jsName = newJsName;
+    edittaskNo(newtaskNo) {
+        this.taskNo = newtaskNo;
     }
 
     editTaskName(newTaskName) {
