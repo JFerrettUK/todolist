@@ -17,7 +17,7 @@ export default class Task {
         this.dueDate = dueDate;
     };
 
-    gettaskNo() {
+    getTaskNo() {
         return this.taskNo;
     }
 

@@ -32,8 +32,8 @@ export default function projectManip() {
             },
 
             //add a new project to the array
-            replaceProject: function(whichProject, replacementArray) {
-                projectList.splice(whichProject, 1, replacementArray)
+            replaceProject: function(projectNo, replacementArray) {
+                projectList.splice(projectNo, 1, replacementArray)
             },
             
         }
@@ -83,20 +83,16 @@ export default function projectManip() {
         }      
 
         //append the task in the relevant project
-
         const whichProject = getAssignedProjectAsNo();
 
         let project = projectList.getProject(whichProject);
         project.appendTask(arrayObj);
 
         projectList.replaceProject(whichProject, project);
-        console.log(projectList.getProject(whichProject));
     });
-
 
     //addEditProjectManipListeners here so it can edit projectList
     function addEditProjectManipListeners() {
-
         let boxNo = getLastBox()
         
         if (boxNo == 0) {
@@ -105,111 +101,310 @@ export default function projectManip() {
             const saveTaskEdit0 = document.getElementById("0editTaskSubmitButton");
             saveTaskEdit0.addEventListener('click', () => {
                 //get the assigned project number
-                let assignedProject = getProjectNoFromDOM(0)
-                let projectNo = getProjectNoFromInput(assignedProject)
+                const assignedProject = getProjectNoFromDOM(0)
+                const projectNo = getProjectNoFromInput(assignedProject)
 
                 //get the assigned project object
-                let project = projectList.getProject(projectNo)
+                const project = projectList.getProject(projectNo)
 
                 //save new task data as an array
-                let inputArray = createInputEditTaskArray(0);
-                console.log(inputArray)
+                const inputArray = createInputEditTaskArray(0);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+                //taskNo
+                const taskNo = replacementTask.getTaskNo()
 
-                //get the assigned task number
-                
+                //replace the task within the project using getTaskNo
+                project.replaceTask(taskNo, replacementTask)
+
+                //replace the project in projectList
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
                 return 
             });   
         } else if (boxNo == 2) {
+            const saveTaskEdit1 = document.getElementById("1editTaskSubmitButton");
+            saveTaskEdit1.addEventListener('click', () => {
+                const assignedProject = getProjectNoFromDOM(1)
+                const projectNo = getProjectNoFromInput(assignedProject)
 
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(1);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
+            });   
         } else if (boxNo == 3) {
             const saveTaskEdit2 = document.getElementById("2editTaskSubmitButton");
             saveTaskEdit2.addEventListener('click', () => {
-                let array = createInputEditTaskArray(2);
-                console.log(array)
-                return array
+                const assignedProject = getProjectNoFromDOM(2)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(2);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
             });   
         } else if (boxNo == 4) {
             const saveTaskEdit3 = document.getElementById("3editTaskSubmitButton");
             saveTaskEdit3.addEventListener('click', () => {
-                let array = createInputEditTaskArray(3);
-                console.log(array)
-                return array
+                const assignedProject = getProjectNoFromDOM(3)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(3);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
             });   
         } else if (boxNo == 5) {
             const saveTaskEdit4 = document.getElementById("4editTaskSubmitButton");
             saveTaskEdit4.addEventListener('click', () => {
-                let array = createInputEditTaskArray(4);
-                console.log(array)
-                return array
+                const assignedProject = getProjectNoFromDOM(4)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(4);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
             });   
         } else if (boxNo == 6) {
             const saveTaskEdit5 = document.getElementById("5editTaskSubmitButton");
             saveTaskEdit5.addEventListener('click', () => {
-                let array = createInputEditTaskArray(5);
-                console.log(array)
-                return array
+                const assignedProject = getProjectNoFromDOM(5)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(5);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
             });   
             const saveTaskEdit6 = document.getElementById("6editTaskSubmitButton");
             saveTaskEdit6.addEventListener('click', () => {
-                let array = createInputEditTaskArray(6);
-                console.log(array)
-                return array
+                const assignedProject = getProjectNoFromDOM(6)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(6);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
             });   
         } else if (boxNo == 8) {
             const saveTaskEdit7 = document.getElementById("7editTaskSubmitButton");
             saveTaskEdit7.addEventListener('click', () => {
-                let array = createInputEditTaskArray(7);
-                console.log(array)
-                return array
+                const assignedProject = getProjectNoFromDOM(7)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(7);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
             });   
         } else if (boxNo == 9) {
             const saveTaskEdit8 = document.getElementById("8editTaskSubmitButton");
             saveTaskEdit8.addEventListener('click', () => {
-                let array = createInputEditTaskArray(8);
-                console.log(array)
-                return array
-            });   
+                const assignedProject = getProjectNoFromDOM(8)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(8);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
+            });    
         } else if (boxNo == 10) {
             const saveTaskEdit9 = document.getElementById("9editTaskSubmitButton");
             saveTaskEdit9.addEventListener('click', () => {
-                let array = createInputEditTaskArray(9);
-                console.log(array)
-                return array
-            });   
+                const assignedProject = getProjectNoFromDOM(9)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(9);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
+            });     
         } else if (boxNo == 11) {
             const saveTaskEdit10 = document.getElementById("10editTaskSubmitButton");
             saveTaskEdit10.addEventListener('click', () => {
-                let array = createInputEditTaskArray(10);
-                console.log(array)
-                return array
+                const assignedProject = getProjectNoFromDOM(10)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(10);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
             });   
         } else if (boxNo == 12) {
             const saveTaskEdit11 = document.getElementById("11editTaskSubmitButton");
             saveTaskEdit11.addEventListener('click', () => {
-                let array = createInputEditTaskArray(11);
-                console.log(array)
-                return array
+                const assignedProject = getProjectNoFromDOM(11)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(11);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
             });   
         } else if (boxNo == 13) {
             const saveTaskEdit12 = document.getElementById("12editTaskSubmitButton");
             saveTaskEdit12.addEventListener('click', () => {
-                let array = createInputEditTaskArray(12);
-                console.log(array)
-                return array
-            });   
+                const assignedProject = getProjectNoFromDOM(12)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(12);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
+            });    
         } else if (boxNo == 14) {
             const saveTaskEdit13 = document.getElementById("13editTaskSubmitButton");
             saveTaskEdit13.addEventListener('click', () => {
-                let array = createInputEditTaskArray(13);
-                console.log(array)
-                return array
+                const assignedProject = getProjectNoFromDOM(13)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(13);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
             });   
         } else if (boxNo == 15) {
             const saveTaskEdit14 = document.getElementById("14editTaskSubmitButton");
             saveTaskEdit14.addEventListener('click', () => {
-                let array = createInputEditTaskArray(14);
-                console.log(array)
-                return array
+                const assignedProject = getProjectNoFromDOM(14)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                const project = projectList.getProject(projectNo)
+
+                const inputArray = createInputEditTaskArray(14);
+                const input = createTaskArray(inputArray);
+                const replacementTask = new Task(input);
+                const taskNo = replacementTask.getTaskNo()
+
+                project.replaceTask(taskNo, replacementTask)
+
+                projectList.replaceProject(projectNo, project)
+                console.log(projectList.getProject(projectNo))
+
+                return 
             });   
         }
     }

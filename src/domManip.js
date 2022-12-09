@@ -2,7 +2,7 @@
 import refreshPage from './refreshPage';
 
 //load project page content into page-main
-import makeProjectPage from './projectPageLoad';
+import projectPageLoad from './projectPageLoad';
 
 //load inbox page content into page-main
 import makeInboxPage from './inboxPageLoad';
@@ -64,7 +64,7 @@ export default function domManip() {
     //Delete the page-main and create a page showing projects
     function activateProject () {
         refreshPage();
-        makeProjectPage();
+        projectPageLoad();
     }
 
     //Delete the page-main and create a page showing the "main inbox" i.e. all tasks

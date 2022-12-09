@@ -10,4 +10,8 @@ export default class Project {
     appendTask(task) {
         this.tasks.push(task);
     }
+
+    replaceTask(taskNo, newTask) {
+        this.tasks[taskNo] = newTask;
+    }
 }

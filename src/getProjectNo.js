@@ -1,4 +1,4 @@
-//Count number of boxes
+//Count number of projects
 
 export default function getProjectNo() {
     const projectOptions = document.querySelectorAll('.newProjects');
