@@ -35,7 +35,6 @@ export default function projectManip() {
             replaceProject: function(projectNo, replacementArray) {
                 projectList.splice(projectNo, 1, replacementArray)
             },
-            
         }
     })();
 
@@ -55,7 +54,6 @@ export default function projectManip() {
         projectNo -= 1;
 
         const nameProjValue = document.getElementById('textInput').value;
-        console.log(nameProjValue)
 
         if (nameProjValue.length < 4) {
             alert("Project name must be at least 4 characters long");
@@ -64,7 +62,6 @@ export default function projectManip() {
 
         const newProject = new Project(`${projectNo}Project`, nameProjValue);
         projectList.addNewProject(newProject);
-        console.log(projectList.getArray())
     });
 
     //add task to project
@@ -119,7 +116,6 @@ export default function projectManip() {
 
                 //replace the project in projectList
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -140,7 +136,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -161,7 +156,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -181,7 +175,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -201,7 +194,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -221,7 +213,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -240,7 +231,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -260,7 +250,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -281,7 +270,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });    
@@ -302,7 +290,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });     
@@ -322,7 +309,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -342,7 +328,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -362,7 +347,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });    
@@ -382,7 +366,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -402,7 +385,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-                console.log(projectList.getProject(projectNo))
 
                 return 
             });   
@@ -414,4 +396,16 @@ export default function projectManip() {
     });
 
     addEditProjectManipListeners()
+
+    
+    function getProjectList () {
+        let project = projectList.getProject(0);
+        console.log(project)
+    }
+
+    const inboxButton = document.getElementById("inboxText");
+    inboxButton.addEventListener('click', getProjectList);
+
+
+    return projectList
 }

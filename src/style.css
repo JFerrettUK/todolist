@@ -147,6 +147,11 @@ body {
         font-size: xx-large;
     }
 
+    .taskCont {
+        display:grid;
+    }
+
+
     #projectOpen {
         margin-top: 30px;
     }
