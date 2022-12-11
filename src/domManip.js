@@ -38,7 +38,11 @@ import createProjectTaskOption  from './createProjectTaskOption';
 import showAllTaskBox  from './showAllTaskBox';
 
 //Create an array from the task input form
-import projectManip from './projectManip';
+import changeProjectTitle  from './changeProjectTitle';
+
+//Add listeners to all projects listed in the nav menu
+import addProjectListeners from './addProjectListeners';
+
 
 export default function domManip() {
     const projectNavMenu = document.getElementById("projectHeader");
@@ -57,13 +61,16 @@ export default function domManip() {
         let projectName = submitNewProject();
         makeProjectHeader(projectName);
         closeProjectBox();
+        addProjectListeners();
     }
 
     projectNavMenu.addEventListener('click', showAllTaskBox);
     addProjectText.addEventListener('click', showProjectBox);
     cancelProject.addEventListener('click', closeProjectBox);
-    submitProject.addEventListener('click', createProjectTaskOption);
-    submitProject.addEventListener('click', newProjectSave);
+    submitProject.addEventListener("click", function (){
+        createProjectTaskOption();
+        newProjectSave();
+    });
     addProjectForm.addEventListener("submit", (e) => {e.preventDefault();});
     addTaskCont.addEventListener('click', showCreateTaskBox);
     cancelTask.addEventListener('click', closeTaskBox);
@@ -85,4 +92,5 @@ export default function domManip() {
 
     addDeleteListeners();
     addEditListeners();
+    addProjectListeners();
 }

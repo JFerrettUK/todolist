@@ -41,7 +41,6 @@ let boxNo = getLastBox()
         });   
     } else if (boxNo == 6) {
         const saveEdit5 = document.getElementById("5editTaskSubmitButton");
-        saveEdit5.addEventListener('click', () => {createInputEditTaskArray(5)});
         saveEdit5.addEventListener('click', () => {
             let array = createInputEditTaskArray(5);
             return array

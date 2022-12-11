@@ -68,26 +68,6 @@ export default function projectManip() {
 
     const taskSubmitButton = document.getElementById("taskSubmitButton")
 
-    taskSubmitButton.addEventListener("click", function (){
-        //make the task from inputs
-        let array = createInputTaskArray()
-        const input = createTaskArray(array);
-        const arrayObj = new Task(input);
-
-        //stop if due date not working
-        if (document.getElementById('dueDate').value == '') {
-            return
-        }      
-
-        //append the task in the relevant project
-        const whichProject = getAssignedProjectAsNo();
-
-        let project = projectList.getProject(whichProject);
-        project.appendTask(arrayObj);
-
-        projectList.replaceProject(whichProject, project);
-    });
-
     //addEditProjectManipListeners here so it can edit projectList
     function addEditProjectManipListeners() {
         let boxNo = getLastBox()
@@ -390,22 +370,104 @@ export default function projectManip() {
             });   
         }
     }
-
+    
     taskSubmitButton.addEventListener("click", function (){
+        //make the task from inputs
+        let array = createInputTaskArray()
+        const input = createTaskArray(array);
+        const arrayObj = new Task(input);
+
+        //stop if due date not working
+        if (document.getElementById('dueDate').value == '') {
+            return
+        }      
+
+        //append the task in the relevant project
+        const whichProject = getAssignedProjectAsNo();
+
+        let project = projectList.getProject(whichProject);
+        project.appendTask(arrayObj);
+
+        projectList.replaceProject(whichProject, project);
+
         addEditProjectManipListeners()
     });
 
+    //add listeners for clicking and selecting which projects display
+
     addEditProjectManipListeners()
 
-    
-    function getProjectList () {
-        let project = projectList.getProject(0);
-        console.log(project)
+    function addProjectListeners() {
+
+        let countAll = getProjectNo()
+        
+            if ((countAll) == 1) {
+                const project0 = document.getElementById(`0ProjectHead`);
+                project0.addEventListener('click', () => {console.log(0)});
+            } else if ((countAll) == 2) {
+                const project1 = document.getElementById(`1ProjectHead`);
+                project1.addEventListener('click', () => {console.log(1)});
+            } else if (countAll == 3) {
+                const project2 = document.getElementById(`2ProjectHead`);
+                project2.addEventListener('click', () => {console.log(2)});
+            } else if (countAll == 4) {
+                const project3 = document.getElementById(`3ProjectHead`);
+                project3.addEventListener('click', () => {console.log(3)});
+            } else if (countAll == 5) {
+                const project4 = document.getElementById(`4ProjectHead`);
+                project4.addEventListener('click', () => {console.log(4)});
+            } else if (countAll == 6) {
+                const project5 = document.getElementById(`5ProjectHead`);
+                project5.addEventListener('click', () => {console.log(5)});
+            } else if (countAll == 7) {
+                const project6 = document.getElementById(`6ProjectHead`);
+                project6.addEventListener('click', () => {console.log(6)});
+            } else if (countAll == 8) {
+                const project7 = document.getElementById(`7ProjectHead`);
+                project7.addEventListener('click', () => {console.log(7)});
+            } else if (countAll == 9) {
+                const project8 = document.getElementById(`8ProjectHead`);
+                project8.addEventListener('click', () => {console.log(8)});
+            } else if (countAll == 10) {
+                const project9 = document.getElementById(`9ProjectHead`);
+                project9.addEventListener('click', () => {console.log(9)});
+            } else if (countAll == 11) {
+                const project10 = document.getElementById(`10ProjectHead`);
+                project10.addEventListener('click', () => {console.log(10)});
+            } else if (countAll == 12) {
+                const project11 = document.getElementById(`11ProjectHead`);
+                project11.addEventListener('click', () => {console.log(11)});
+            } else if (countAll == 13) {
+                const project12 = document.getElementById(`12ProjectHead`);
+                project12.addEventListener('click', () => {console.log(12)});
+            } else if (countAll == 14) {
+                const project13 = document.getElementById(`13ProjectHead`);
+                project12.addEventListener('click', () => {console.log(13)});
+            } else if (countAll == 15) {
+                const project14 = document.getElementById(`14ProjectHead`);
+                project14.addEventListener('click', () => {console.log(14)});
+            }
+        }
+
+    projectSubmitButton.addEventListener("click", function (){
+        const nameProjValue = document.getElementById('textInput').value;
+        if (nameProjValue.length < 4) {
+            return;
+        }
+
+        addProjectListeners()
+    });
+
+    addProjectListeners()
+
+
+
+    function getProjectArray () {
+        let project = projectList.getArray();
     }
 
-    const inboxButton = document.getElementById("inboxText");
-    inboxButton.addEventListener('click', getProjectList);
-
+    const headerText = document.getElementById("headerText");
+    headerText.addEventListener('click', getProjectArray);
 
     return projectList
 }
