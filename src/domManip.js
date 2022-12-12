@@ -41,7 +41,7 @@ import showAllTaskBox  from './showAllTaskBox';
 import changeProjectTitle  from './changeProjectTitle';
 
 //Add listeners to all projects listed in the nav menu
-import addProjectListeners from './addProjectListeners';
+import addProjectTitleListeners from './addProjectTitleListeners';
 
 
 export default function domManip() {
@@ -61,7 +61,7 @@ export default function domManip() {
         let projectName = submitNewProject();
         makeProjectHeader(projectName);
         closeProjectBox();
-        addProjectListeners();
+        addProjectTitleListeners();
     }
 
     projectNavMenu.addEventListener('click', showAllTaskBox);
@@ -92,5 +92,5 @@ export default function domManip() {
 
     addDeleteListeners();
     addEditListeners();
-    addProjectListeners();
+    addProjectTitleListeners();
 }

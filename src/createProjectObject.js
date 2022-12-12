@@ -7,6 +7,10 @@ export default class Project {
         this.tasks = []
     };
 
+    getTasks() {
+        return this.tasks;
+    }
+
     appendTask(task) {
         this.tasks.push(task);
     }
