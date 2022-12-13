@@ -51,6 +51,7 @@ let countAll = getLastBox()
 
         const cancelEdit4 = document.getElementById("4editTaskCancelButton");
         cancelEdit4.addEventListener('click', () => {closeEditBox(4)});
+        
         const saveEdit4 = document.getElementById("4editTaskSubmitButton");
         saveEdit4.addEventListener('click', () => {saveEditDOMValues(4)});
     } else if (countAll == 6) {

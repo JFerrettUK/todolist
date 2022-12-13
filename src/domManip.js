@@ -37,12 +37,11 @@ import createProjectTaskOption  from './createProjectTaskOption';
 //Create an array from the task input form
 import showAllTaskBox  from './showAllTaskBox';
 
-//Create an array from the task input form
-import changeProjectTitle  from './changeProjectTitle';
+//Change the main title
+import changeInboxTitle  from './changeInboxTitle';
 
 //Add listeners to all projects listed in the nav menu
 import addProjectTitleListeners from './addProjectTitleListeners';
-
 
 export default function domManip() {
     const projectNavMenu = document.getElementById("projectHeader");
@@ -53,6 +52,7 @@ export default function domManip() {
     const addTaskCont = document.getElementById("newTaskCont");
     const cancelTask = document.getElementById("taskCancelButton");
     const submitTask = document.getElementById("taskSubmitButton");
+    const inbox = document.getElementById("inboxText");
 
     //press the project form submit button and return the input "name" value
     //Add a sub-Header in the nav-bar with the input "name" value of a new submitted project
@@ -65,6 +65,9 @@ export default function domManip() {
     }
 
     projectNavMenu.addEventListener('click', showAllTaskBox);
+    projectNavMenu.addEventListener('click', changeInboxTitle);
+    inbox.addEventListener('click', changeInboxTitle);
+    inbox.addEventListener('click', showAllTaskBox);
     addProjectText.addEventListener('click', showProjectBox);
     cancelProject.addEventListener('click', closeProjectBox);
     submitProject.addEventListener("click", function (){
@@ -76,6 +79,7 @@ export default function domManip() {
     cancelTask.addEventListener('click', closeTaskBox);
     addTaskCont.addEventListener('click', showCreateTaskBox);
     submitTask.addEventListener("click", function (){
+        changeInboxTitle()
         const array = createInputTaskArray();
         const input = createTaskArray(array);
         if (document.getElementById('dueDate').value == '') {
@@ -86,7 +90,10 @@ export default function domManip() {
         closeTaskBox();
         addDeleteListeners();
         addEditListeners();
+        showAllTaskBox();
     });
+
+
 
     //Make the id titleHead innerText change depending on the selected project
 

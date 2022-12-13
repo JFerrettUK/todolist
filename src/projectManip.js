@@ -98,6 +98,8 @@ export default function projectManip() {
                 //replace the project in projectList
                 projectList.replaceProject(projectNo, project)
 
+                console.log(projectList.getArray())
+
                 return 
             });   
         } else if (boxNo == 2) {
@@ -393,20 +395,26 @@ export default function projectManip() {
         projectList.replaceProject(whichProject, project);
 
         addEditProjectManipListeners()
+
+        console.log(projectList.getArray())
+
     });
 
     //add listeners for clicking and selecting which projects display
 
     addEditProjectManipListeners()
 
+    //finds the relevant project when editing a task box
     function getProject(valueHere) {
         hideAllTaskBox()
         let projectArray = projectList.getArray();
         let relevantProject = projectArray[valueHere]
         let tasksHere = relevantProject.getTasks()
 
+        //problem is here! Can't filter by project after editing and saving a task.
         tasksHere.forEach(function (tasksHere) {
             let x = tasksHere.taskNo;
+            console.log(x)
             x -= 1;
             document.getElementById(`${x}Cont`).style.display = "grid";
         });
@@ -474,10 +482,6 @@ export default function projectManip() {
     });
 
     addProjectListeners()
-
-    let project = projectList.getArray();
-    let project0 = project[0]
-    console.log(project0)
 
     return projectList
 }
