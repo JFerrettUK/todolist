@@ -1,0 +1,360 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./Roboto-Black.ttf') format('ttf'),
+      url('./Roboto-Thin.ttf') format('ttf'),
+      url('./Roboto-Regular.ttf') format('ttf');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #e4e4e4;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    color: white;
+    font: 500 100% 'Roboto';
+}
+
+.page-wrap {
+    background: black;
+    height: calc(100vh - 10px);
+    box-shadow: 0 0 3px rgba(black, 0.33);
+    display: grid;
+    grid-template-columns: minmax(230px, 1fr) minmax(10px, 4fr);
+    grid-template-rows: min-content 1fr min-content;
+    gap: 1px;
+}
+  
+.page-header {
+    display: grid;
+    justify-content: left;
+    padding-left: 40px;
+    align-items: center;
+    height: 100px;
+    grid-column: 1 / -1;
+    background:#16213E;
+}
+  
+.page-sidebar {
+    padding-left: 40px;
+    padding-top: 20px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    background: #E94560;;
+    box-shadow: 0 0 3px rgba(black, 0.33);
+}
+
+    .navLogo {
+        height: 25px;
+        margin-right: 3px;
+        filter: invert(100%);
+    }
+
+    .activeProject {
+        background-color: rgba(20, 54, 105, 0.3);
+        width: 300px;
+        border-radius: 3px;
+    }
+
+
+    .projectText, #inboxText {
+        display: flex;
+        margin-top: 12px;
+        margin-bottom: -5px;
+        font-size:x-large;
+    }
+    
+        .projectList {
+            margin-left: 10px;
+            margin-right: 20px;
+            margin-top: 10px;
+            font-size:x-large;
+        }
+
+        .addProjectText {
+            display: flex;
+            align-items: center;
+        }
+
+            .navLogo2 {
+                height: 15px;
+                margin-right: 3px;
+                filter: invert(100%);
+            }
+
+        #addFormCont {
+            display: none;
+        }    
+
+        #addProjectForm {
+            display: grid;
+            gap: 5px;
+        }
+
+        #textInput {
+            width: 145px;
+        }
+
+        #submitBtns {
+            display:flex;
+            gap: 5px;
+        }
+
+            #submitButton {
+                background-color: #0F3460;
+            }
+
+            #cancelButton {
+                background-color: #E94560;
+            }
+
+            .buttonForm {
+                display: inline-block;
+                border: 1px solid #ffffff;
+                text-align: center;
+                border-radius: 5px;
+                vertical-align: top;
+                font-size: 14px;
+                min-height: 28px;
+                min-width: 69.5px;
+                line-height: 1.29;
+                color: #ffffff;
+            }
+
+        
+.page-main {
+    grid-column: 2 / 3;
+    background: #0F3460;
+    box-shadow: inset 0px 5px 7px -7px rgb(0, 0, 0);
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-right: 30px;
+}
+
+    #titleHead {
+        border-radius: 30px;
+        background-color: #E94560;
+        min-width: 530px;
+        height:70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: xx-large;
+    }
+
+    .taskCont {
+        display:grid;
+    }
+
+
+    #projectOpen {
+        margin-top: 30px;
+    }
+
+        #newTaskCont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 530px;
+        }
+
+            .newTaskBox {
+                border-radius: 30px;
+                border:#ffffff solid 2px;
+                background-color: #0F3460;
+                height:35px;
+                width: 250px;
+                color:#ffffff;
+                display: grid;
+                align-items: center;
+                grid-template-columns: 1fr 25px 120px 1fr;
+            }
+
+            .newPlus {
+                height: 17px;
+                margin-right: 3px;
+                filter: invert(100%);
+            }
+
+            .newTaskTitleText {
+                margin-left: 3px;
+            }
+
+
+        #taskFormCont {
+            display: none;
+            justify-content: center;
+            min-width: 530px;
+        }    
+
+            .addText {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            #addTaskForm {
+                display: grid;
+                gap: 5px;
+            }
+
+            #textTaskInput {
+                width: 250px;
+            }
+
+            #taskSubmitBtns {
+                display:flex;
+                gap: 5px;
+            }
+
+                #taskSubmitButton {
+                    background-color: #0F3460;
+                }
+
+                #taskCancelButton {
+                    background-color: #E94560;
+                }
+
+                .taskButtonForm {
+                    display: inline-block;
+                    border: 1px solid #ffffff;
+                    text-align: center;
+                    border-radius: 5px;
+                    vertical-align: top;
+                    font-size: 14px;
+                    min-height: 28px;
+                    min-width: 122px;
+                    line-height: 1.29;
+                    color: #ffffff;
+                }
+            
+
+        .editTaskFormCont {
+            display: none;
+            justify-content: center;
+            min-width: 530px;
+        }    
+
+            .editText {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                margin-top: 10px;
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .projectAssignment {
+                display: none;
+            }
+
+            .editTaskForm {
+                display: grid;
+                gap: 5px;
+            }
+
+            .editTextTaskInput {
+                width: 250px;
+            }
+
+            .editTaskSubmitBtns {
+                display:flex;
+                gap: 5px;
+                margin-top: 5px;
+            }
+
+                .editTaskSubmitButton {
+                    background-color: #0F3460;
+                }
+
+                .editTaskCancelButton {
+                    background-color: #E94560;
+                }
+
+                .editTaskButtonForm {
+                    display: inline-block;
+                    border: 1px solid #ffffff;
+                    text-align: center;
+                    border-radius: 5px;
+                    vertical-align: top;
+                    font-size: 14px;
+                    min-height: 28px;
+                    min-width: 122px;
+                    line-height: 1.29;
+                    color: #ffffff;
+                }
+            
+        .taskBox {
+            border-radius: 30px;
+            background-color: #d8cdcf;
+            height:35px;
+            min-width: 530px;
+            color:#0F3460;
+            display: grid;
+            align-items: center;
+            grid-template-columns: 20px 150px 1fr 150px 100px 35px 50px;
+        }
+
+            .taskBoxStart {
+                background: #E94560;
+                width: 20px;
+                height: 35px;
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+            }
+
+            .taskTitleText {
+                margin-left: 20px;
+            }
+
+            .priorityBox {
+                height: 25px;
+                background: yellow;
+                width: 100px;
+                border-radius:15px;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .trashIcon {
+                display: grid;
+                margin-left: 9px;
+                justify-content: center;
+                height: 25px;
+                filter: opacity(40%);
+                width: 25px;
+            }
+
+            .editIcon {
+                display: grid;
+                margin-left: 9px;
+                justify-content: center;
+                height: 25px;
+                filter: opacity(40%);
+                width: 25px;
+            }
+
+.headerText {
+    font-weight: 800;
+    font-size: xxx-large;
+}
+
+    #hText2 {
+        color: #E94560;
+    }
+  
+.leadText {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size:x-large;
+}
