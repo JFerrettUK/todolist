@@ -14,37 +14,56 @@ export default function projectManip() {
     const projectList = (function () {
 
         //the array for the gameboard i.e. what should be displayed on the screen
-        let projectList = []
+        let projectArray = []
        
         return {
             //get the entire array of projects
             getArray: function() { 
-                return projectList 
+                return projectArray 
             },
             
             //get a single project from the array based on its index
             getProject: function(projectNo) {
-                return projectList[projectNo]
+                return projectArray[projectNo]
             },
 
             //add a new project to the array
             addNewProject: function(projectHere) {
-                projectList.push(projectHere)
+                projectArray.push(projectHere)
             },
 
             //add a new project to the array
             replaceProject: function(projectNo, replacementArray) {
-                projectList.splice(projectNo, 1, replacementArray)
+                projectArray.splice(projectNo, 1, replacementArray)
+            },
+
+            //add a new project to the array
+            replaceProjectArray: function(replacementArray) {
+                projectArray = replacementArray;
             },
         }
     })();
 
-    function makeDefaultProject() {        
-        const defaultProject = new Project("0Project", "TodoList");
-        projectList.addNewProject(defaultProject);
+    function makeInitialProjects() {        
+        let myLocalData = JSON.parse(localStorage.getItem("myLocalStore"))
+
+        if (myLocalData == null) {
+            const defaultProject = new Project("0Project", "TodoList");
+            projectList.addNewProject(defaultProject);
+            console.log("noLocalData")
+        } else {
+            projectList.replaceProjectArray(myLocalData);
+            console.log(projectList.getArray())
+        }
     }
 
-    makeDefaultProject()
+    //ORIGINAL MAKE DEFAULT PROJECT HERE
+    // function makeDefaultProject() {        
+    //     const defaultProject = new Project("0Project", "TodoList");
+    //     projectList.addNewProject(defaultProject);
+    // }
+
+    makeInitialProjects()
 
     //creates a new project with same name as drop input (in "projectList" / 
     //named "[no]Project") and header IDs ("[no]ProjectHead")
@@ -90,13 +109,18 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
                 //taskNo
-                const taskNo = replacementTask.getTaskNo()
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
 
                 //replace the task within the project using getTaskNo
                 project.replaceTask(taskNo, replacementTask)
 
                 //replace the project in projectList
                 projectList.replaceProject(projectNo, project)
+
+                console.log(project)
+                let projectArray = projectList.getArray();
+                console.log(projectArray)
 
                 return 
             });   
@@ -112,11 +136,16 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                const taskNo = replacementTask.getTaskNo()
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
 
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
+
+                console.log(project)
+                let projectArray = projectList.getArray();
+                console.log(projectArray)
 
                 return 
             });   
@@ -132,7 +161,8 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                const taskNo = replacementTask.getTaskNo()
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
 
                 project.replaceTask(taskNo, replacementTask)
 
@@ -151,8 +181,10 @@ export default function projectManip() {
                 const inputArray = createInputEditTaskArray(3);
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
-                const taskNo = replacementTask.getTaskNo()
 
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -170,8 +202,10 @@ export default function projectManip() {
                 const inputArray = createInputEditTaskArray(4);
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
-                const taskNo = replacementTask.getTaskNo()
 
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -189,8 +223,10 @@ export default function projectManip() {
                 const inputArray = createInputEditTaskArray(5);
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
-                const taskNo = replacementTask.getTaskNo()
 
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -208,8 +244,10 @@ export default function projectManip() {
                 const inputArray = createInputEditTaskArray(6);
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
-                const taskNo = replacementTask.getTaskNo()
 
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -227,8 +265,10 @@ export default function projectManip() {
                 const inputArray = createInputEditTaskArray(7);
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
-                const taskNo = replacementTask.getTaskNo()
 
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -247,8 +287,9 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                const taskNo = replacementTask.getTaskNo()
-
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -267,8 +308,9 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                const taskNo = replacementTask.getTaskNo()
-
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -286,8 +328,10 @@ export default function projectManip() {
                 const inputArray = createInputEditTaskArray(10);
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
-                const taskNo = replacementTask.getTaskNo()
 
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -305,8 +349,10 @@ export default function projectManip() {
                 const inputArray = createInputEditTaskArray(11);
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
-                const taskNo = replacementTask.getTaskNo()
 
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -324,8 +370,10 @@ export default function projectManip() {
                 const inputArray = createInputEditTaskArray(12);
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
-                const taskNo = replacementTask.getTaskNo()
 
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -343,8 +391,10 @@ export default function projectManip() {
                 const inputArray = createInputEditTaskArray(13);
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
-                const taskNo = replacementTask.getTaskNo()
 
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -362,8 +412,10 @@ export default function projectManip() {
                 const inputArray = createInputEditTaskArray(14);
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
-                const taskNo = replacementTask.getTaskNo()
 
+                let taskNo = replacementTask.getTaskNo()
+                taskNo -= 1
+                
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -394,6 +446,12 @@ export default function projectManip() {
         projectList.replaceProject(whichProject, project);
 
         addEditProjectManipListeners()
+
+        let projectArray = projectList.getArray();
+
+        localStorage.setItem("myLocalStore", JSON.stringify(projectArray));
+        let myLocalData = JSON.parse(localStorage.getItem("myLocalStore"))
+        console.log(myLocalData)
     });
 
     //add listeners for clicking and selecting which projects display
@@ -478,5 +536,5 @@ export default function projectManip() {
 
     addProjectListeners()
 
-    return projectList
+
 }

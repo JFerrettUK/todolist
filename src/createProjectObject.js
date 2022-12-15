@@ -16,6 +16,7 @@ export default class Project {
     }
 
     replaceTask(taskNo, newTask) {
+        console.log(taskNo)
         this.tasks[taskNo] = newTask;
     }
 }
