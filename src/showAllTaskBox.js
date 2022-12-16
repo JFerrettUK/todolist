@@ -6,6 +6,7 @@ export default function showAllTaskBox() {
     let lastBoxNo = getLastBox()
 
     for (let i = 0; i < lastBoxNo; i++) {
+        console.log(i)
         document.getElementById(`${i}Cont`).style.display = "grid"
     }
 }

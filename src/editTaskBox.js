@@ -1,6 +1,4 @@
 //Delete a task bar with the assigned number
-import getLastBox from "./getLastBox";
-import closeTaskBox from "./closeTaskBox";
 import showEditTaskBox from "./showEditTaskBox";
 
 

@@ -41,29 +41,34 @@ export default function projectManip() {
             replaceProjectArray: function(replacementArray) {
                 projectArray = replacementArray;
             },
+
+            //add a new project to the array
+            deleteTaskInProject: function(projectNo, replacementArray) {
+                projectArray.splice(projectNo, 1, replacementArray)
+            },
         }
     })();
 
-    function makeInitialProjects() {        
-        let myLocalData = JSON.parse(localStorage.getItem("myLocalStore"))
+    // function makeInitialProjects() {        
+    //     let myLocalData = JSON.parse(localStorage.getItem("myLocalStore"))
 
-        if (myLocalData == null) {
-            const defaultProject = new Project("0Project", "TodoList");
-            projectList.addNewProject(defaultProject);
-            console.log("noLocalData")
-        } else {
-            projectList.replaceProjectArray(myLocalData);
-            console.log(projectList.getArray())
-        }
-    }
-
-    //ORIGINAL MAKE DEFAULT PROJECT HERE
-    // function makeDefaultProject() {        
-    //     const defaultProject = new Project("0Project", "TodoList");
-    //     projectList.addNewProject(defaultProject);
+    //     if (myLocalData == null) {
+    //         const defaultProject = new Project("0Project", "TodoList");
+    //         projectList.addNewProject(defaultProject);
+    //         console.log("noLocalData")
+    //     } else {
+    //         projectList.replaceProjectArray(myLocalData);
+    //         console.log(projectList.getArray())
+    //     }
     // }
 
-    makeInitialProjects()
+    //ORIGINAL MAKE DEFAULT PROJECT HERE
+    function makeDefaultProject() {        
+        const defaultProject = new Project("0Project", "TodoList");
+        projectList.addNewProject(defaultProject);
+    }
+
+    makeDefaultProject()
 
     //creates a new project with same name as drop input (in "projectList" / 
     //named "[no]Project") and header IDs ("[no]ProjectHead")
@@ -87,6 +92,87 @@ export default function projectManip() {
     //add task to project
 
     const taskSubmitButton = document.getElementById("taskSubmitButton")
+
+    function addDeleteTaskListeners() {
+
+        let countAll = getLastBox()
+        
+        if ((countAll) == 1) {
+            const trash0 = document.getElementById("0Trash");
+    
+            trash0.addEventListener('click', () => {
+                const assignedProject = getProjectNoFromDOM(0)
+                const projectNo = getProjectNoFromInput(assignedProject)
+
+                //get the assigned project object
+                const project = projectList.getProject(projectNo)
+
+                //delete the task within the project using getTaskNo
+                project.deleteTaskInProject(0)
+
+                //replace the project in projectList
+                projectList.replaceProject(projectNo, project)
+                
+            });
+        } else if (countAll == 2) {
+            const trash1 = document.getElementById("1Trash");
+    
+            trash1.addEventListener('click', () => {deleteTaskBox(1)});
+        } else if (countAll == 3) {
+            const trash2 = document.getElementById("2Trash");
+    
+            trash2.addEventListener('click', () => {deleteTaskBox(2)});
+        } else if (countAll == 4) {
+            const trash3 = document.getElementById("3Trash");
+    
+            trash3.addEventListener('click', () => {deleteTaskBox(3)});
+        } else if (countAll == 5) {
+            const trash4 = document.getElementById("4Trash");
+    
+            trash4.addEventListener('click', () => {deleteTaskBox(4)});
+        } else if (countAll == 6) {
+            const trash5 = document.getElementById("5Trash");
+    
+            trash5.addEventListener('click', () => {deleteTaskBox(5)});
+        } else if (countAll == 7) {
+            const trash6 = document.getElementById("6Trash");
+    
+            trash6.addEventListener('click', () => {deleteTaskBox(6)});
+        } else if (countAll == 8) {
+            const trash7 = document.getElementById("7Trash");
+    
+            trash7.addEventListener('click', () => {deleteTaskBox(7)});
+        } else if (countAll == 9) {
+            const trash8 = document.getElementById("8Trash");
+    
+            trash8.addEventListener('click', () => {deleteTaskBox(8)});
+        } else if (countAll == 10) {
+            const trash9 = document.getElementById("9Trash");
+    
+            trash9.addEventListener('click', () => {deleteTaskBox(9)});
+        } else if (countAll == 11) {
+            const trash10 = document.getElementById("10Trash");
+    
+            trash10.addEventListener('click', () => {deleteTaskBox(10)});
+        } else if (countAll == 12) {
+            const trash11 = document.getElementById("11Trash");
+    
+            trash11.addEventListener('click', () => {deleteTaskBox(11)});
+        } else if (countAll == 13) {
+            const trash12 = document.getElementById("12Trash");
+    
+            trash12.addEventListener('click', () => {deleteTaskBox(12)});
+        } else if (countAll == 14) {
+            const trash13 = document.getElementById("13Trash");
+    
+            trash12.addEventListener('click', () => {deleteTaskBox(13)});
+        } else if (countAll == 15) {
+            const trash14 = document.getElementById("14Trash");
+    
+            trash14.addEventListener('click', () => {deleteTaskBox(14)});
+        }
+    }
+
 
     //addEditProjectManipListeners here so it can edit projectList
     function addEditProjectManipListeners() {
@@ -446,26 +532,30 @@ export default function projectManip() {
         projectList.replaceProject(whichProject, project);
 
         addEditProjectManipListeners()
+        addDeleteTaskListeners()
 
-        let projectArray = projectList.getArray();
+        // puts array in local storage
+        // let projectArray = projectList.getArray();
 
-        localStorage.setItem("myLocalStore", JSON.stringify(projectArray));
-        let myLocalData = JSON.parse(localStorage.getItem("myLocalStore"))
-        console.log(myLocalData)
+        // localStorage.setItem("myLocalStore", JSON.stringify(projectArray));
+        // let myLocalData = JSON.parse(localStorage.getItem("myLocalStore"))
+        // console.log(myLocalData)
     });
 
     //add listeners for clicking and selecting which projects display
 
     addEditProjectManipListeners()
+    addDeleteTaskListeners()
 
     //finds the relevant project when editing a task box
     function getProject(valueHere) {
         hideAllTaskBox()
         let projectArray = projectList.getArray();
+        console.log(projectArray)
         let relevantProject = projectArray[valueHere]
         let tasksHere = relevantProject.getTasks()
 
-        //problem is here! Can't filter by project after editing and saving a task.
+        //problem is here! Can't filter by project after deleting a task.
         tasksHere.forEach(function (tasksHere) {
             let x = tasksHere.taskNo;
             x -= 1;
@@ -525,6 +615,7 @@ export default function projectManip() {
             }
         }
 
+
     projectSubmitButton.addEventListener("click", function (){
         const nameProjValue = document.getElementById('textInput').value;
         if (nameProjValue.length < 4) {
@@ -535,6 +626,4 @@ export default function projectManip() {
     });
 
     addProjectListeners()
-
-
 }
