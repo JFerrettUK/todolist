@@ -74,7 +74,7 @@ export default function createTaskBox(input) {
     taskBox.appendChild(priorityBox);
     taskBox.appendChild(editIcon);
     taskBox.appendChild(trashIcon);
-    taskBox.appendChild(assignedProject);
+    mainHeader.appendChild(assignedProject);
 
     document.getElementById(`${boxNo}Trash`).src="./trash.png";
     document.getElementById(`${boxNo}Edit`).src="./edit.png";

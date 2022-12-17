@@ -7,6 +7,10 @@ export default function showAllTaskBox() {
 
     for (let i = 0; i < lastBoxNo; i++) {
         console.log(i)
-        document.getElementById(`${i}Cont`).style.display = "grid"
+        if (document.getElementById(`${i}Cont`).style.display == null) {
+            continue
+        } else {
+            document.getElementById(`${i}Cont`).style.display = "grid"
+        }
     }
 }
