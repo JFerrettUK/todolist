@@ -101,6 +101,7 @@ export default function projectManip() {
     
                 const project = projectList.getProject(projectNo)
                 project.deleteTask(0)
+                console.log(project)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -277,7 +278,6 @@ export default function projectManip() {
         }
     }
 
-
     //addEditProjectManipListeners here so it can edit projectList
     function addEditProjectManipListeners() {
         let boxNo = getLastBox()
@@ -308,10 +308,6 @@ export default function projectManip() {
                 //replace the project in projectList
                 projectList.replaceProject(projectNo, project)
 
-                console.log(project)
-                let projectArray = projectList.getArray();
-                console.log(projectArray)
-
                 return 
             });   
         } else if (boxNo == 2) {
@@ -332,10 +328,6 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
-
-                console.log(project)
-                let projectArray = projectList.getArray();
-                console.log(projectArray)
 
                 return 
             });   
@@ -656,14 +648,14 @@ export default function projectManip() {
     function getProject(valueHere) {
         hideAllTaskBox()
         let projectArray = projectList.getArray();
-        console.log(projectArray)
         let relevantProject = projectArray[valueHere]
         let tasksHere = relevantProject.getTasks()
 
-        //problem is here! Can't filter by project after deleting a task.
         tasksHere.forEach(function (tasksHere) {
             let x = tasksHere.taskNo;
+            console.log(x + "taskNo")
             x -= 1;
+            console.log(x + "taskNo")
             document.getElementById(`${x}Cont`).style.display = "grid";
         });
     }
@@ -720,7 +712,6 @@ export default function projectManip() {
         }
     }
 
-
     projectSubmitButton.addEventListener("click", function (){
         const nameProjValue = document.getElementById('textInput').value;
         if (nameProjValue.length < 4) {
@@ -731,4 +722,9 @@ export default function projectManip() {
     });
 
     addProjectListeners()
+
+    const headerText = document.getElementById("headerText")
+    headerText.addEventListener("click", function (){
+        console.log(projectList.getArray())
+    })
 }

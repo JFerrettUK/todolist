@@ -18,7 +18,7 @@ export default function createTaskBox(input) {
 
     //check due date
     const mainHeader = document.getElementById('page-main');
-    const breakBox = document.createElement('br');
+
 
     let boxNo = getLastBox();
     
@@ -26,6 +26,9 @@ export default function createTaskBox(input) {
     const taskCont = document.createElement('div');
     taskCont.setAttribute("class", "taskCont");
     taskCont.setAttribute("id", `${boxNo}Cont`)
+
+    const breakBox = document.createElement('br');
+    breakBox.setAttribute("id", `${boxNo}br`)
 
     const taskBox = document.createElement('div');
     taskBox.setAttribute("class", "taskBox");

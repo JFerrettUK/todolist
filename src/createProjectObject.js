@@ -16,12 +16,10 @@ export default class Project {
     }
 
     replaceTask(taskNo, newTask) {
-        console.log(taskNo)
         this.tasks[taskNo] = newTask;
     }
 
     deleteTask(taskNo) {
-        console.log(taskNo)
         this.tasks.splice(taskNo, 1)
     }
 }
