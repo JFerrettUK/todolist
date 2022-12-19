@@ -44,26 +44,30 @@ export default function projectManip() {
         }
     })();
 
-    // function makeInitialProjects() {        
-    //     let myLocalData = JSON.parse(localStorage.getItem("myLocalStore"))
+    function makeInitialProjects() {        
+        let myLocalData = JSON.parse(window.localStorage.getItem("myLocalStore"))
 
-    //     if (myLocalData == null) {
-    //         const defaultProject = new Project("0Project", "TodoList");
-    //         projectList.addNewProject(defaultProject);
-    //         console.log("noLocalData")
-    //     } else {
-    //         projectList.replaceProjectArray(myLocalData);
-    //         console.log(projectList.getArray())
-    //     }
-    // }
-
-    //ORIGINAL MAKE DEFAULT PROJECT HERE
-    function makeDefaultProject() {        
-        const defaultProject = new Project("0Project", "TodoList");
-        projectList.addNewProject(defaultProject);
+        if (myLocalData == null) {
+            const defaultProject = new Project("0Project", "TodoList");
+            projectList.addNewProject(defaultProject);
+            console.log("noLocalData")
+        } else {
+            console.log(projectList.getArray())
+            const defaultProject = new Project("0Project", "TodoList");
+            projectList.addNewProject(defaultProject);
+            projectList.replaceProjectArray(myLocalData);
+            console.log(projectList.getArray())
+        }
     }
 
-    makeDefaultProject()
+    // //ORIGINAL MAKE DEFAULT PROJECT HERE
+    // function makeDefaultProject() {        
+    //     const defaultProject = new Project("0Project", "TodoList");
+    //     projectList.addNewProject(defaultProject);
+    // }
+
+    // makeDefaultProject()
+    makeInitialProjects()
 
     //creates a new project with same name as drop input (in "projectList" / 
     //named "[no]Project") and header IDs ("[no]ProjectHead")
@@ -91,7 +95,6 @@ export default function projectManip() {
     function addDeleteTaskListeners(taskNo) {
 
         let countAll = getLastBox()
-        console.log(countAll + " count all")
         
         if ((countAll) == 1) {
             const trash0 = document.getElementById("0Trash");
@@ -105,7 +108,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${0}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -122,7 +124,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${1}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -139,7 +140,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${2}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -156,7 +156,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${3}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -173,7 +172,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${4}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -190,7 +188,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${5}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -207,7 +204,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${6}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -224,7 +220,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${7}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -241,7 +236,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${8}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -258,7 +252,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${9}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -275,7 +268,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${10}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -293,7 +285,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${11}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -310,7 +301,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${12}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -328,7 +318,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${13}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -345,7 +334,6 @@ export default function projectManip() {
 
                 //find this box's task no
                 let taskNo = document.getElementById(`${14}taskNo`)
-                console.log(taskNo + " taskNo")
 
                 project.deleteTask(taskNo)
 
@@ -689,10 +677,7 @@ export default function projectManip() {
         let array = createInputTaskArray()
         const input = createTaskArray(array);
         const arrayObj = new Task(input);
-        console.log(arrayObj)
         let taskNo = arrayObj.taskNo
-        console.log(taskNo + " taskNo")
-
 
         //stop if due date not working
         if (document.getElementById('dueDate').value == '') {
@@ -709,14 +694,12 @@ export default function projectManip() {
 
         addDeleteTaskListeners(taskNo)
         addEditProjectManipListeners()
-        console.log(projectList.getArray())
 
         // puts array in local storage
-        // let projectArray = projectList.getArray();
-
-        // localStorage.setItem("myLocalStore", JSON.stringify(projectArray));
-        // let myLocalData = JSON.parse(localStorage.getItem("myLocalStore"))
-        // console.log(myLocalData)
+        let projectArray = projectList.getArray();
+        localStorage.setItem("myLocalStore", JSON.stringify(projectArray));
+        let myLocalData = JSON.parse(window.localStorage.getItem("myLocalStore"))
+        console.log(myLocalData)
     });
 
     //add listeners for clicking and selecting which projects display
@@ -728,16 +711,12 @@ export default function projectManip() {
     function getProject(valueHere) {
         hideAllTaskBox()
         let projectArray = projectList.getArray();
-        console.log(projectArray)
         let relevantProject = projectArray[valueHere]
         let tasksHere = relevantProject.getTasks()
-        console.log(tasksHere)
-
 
         tasksHere.forEach(function (tasksHere) {
             let x = tasksHere.taskNo;
             x -= 1;
-            console.log(x + "taskNo")
             document.getElementById(`${x}Cont`).style.display = "grid";
         });
     }
@@ -806,7 +785,7 @@ export default function projectManip() {
     addProjectListeners()
 
     const headerText = document.getElementById("headerText")
-    headerText.addEventListener("click", function (){
+    headerText.addEventListener("click", function () {
         console.log(projectList.getArray())
     })
 }
