@@ -88,20 +88,26 @@ export default function projectManip() {
 
     const taskSubmitButton = document.getElementById("taskSubmitButton")
 
-    function addDeleteTaskListeners() {
+    function addDeleteTaskListeners(taskNo) {
 
         let countAll = getLastBox()
+        console.log(countAll + " count all")
         
         if ((countAll) == 1) {
             const trash0 = document.getElementById("0Trash");
     
             trash0.addEventListener('click', () => {
+                //get which project this box is using
                 const assignedProject = getProjectNoFromDOM(0)
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(0)
-                console.log(project)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${0}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -113,7 +119,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(1)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${1}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -125,7 +136,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(2)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${2}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -137,7 +153,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(3)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${3}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -149,7 +170,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(4)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${4}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -161,7 +187,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(5)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${5}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -173,7 +204,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(6)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${6}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -185,7 +221,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(7)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${7}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -197,7 +238,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(8)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${8}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -209,7 +255,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(9)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${9}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -221,7 +272,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(10)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${10}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
 
@@ -234,7 +290,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(11)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${11}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -246,7 +307,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(12)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${12}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
 
@@ -259,7 +325,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(13)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${13}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -271,7 +342,12 @@ export default function projectManip() {
                 const projectNo = getProjectNoFromInput(assignedProject)
     
                 const project = projectList.getProject(projectNo)
-                project.deleteTask(14)
+
+                //find this box's task no
+                let taskNo = document.getElementById(`${14}taskNo`)
+                console.log(taskNo + " taskNo")
+
+                project.deleteTask(taskNo)
 
                 projectList.replaceProject(projectNo, project)
             });
@@ -613,6 +689,10 @@ export default function projectManip() {
         let array = createInputTaskArray()
         const input = createTaskArray(array);
         const arrayObj = new Task(input);
+        console.log(arrayObj)
+        let taskNo = arrayObj.taskNo
+        console.log(taskNo + " taskNo")
+
 
         //stop if due date not working
         if (document.getElementById('dueDate').value == '') {
@@ -627,8 +707,8 @@ export default function projectManip() {
 
         projectList.replaceProject(whichProject, project);
 
+        addDeleteTaskListeners(taskNo)
         addEditProjectManipListeners()
-        addDeleteTaskListeners()
         console.log(projectList.getArray())
 
         // puts array in local storage
@@ -641,19 +721,21 @@ export default function projectManip() {
 
     //add listeners for clicking and selecting which projects display
 
+    addDeleteTaskListeners(0)
     addEditProjectManipListeners()
-    addDeleteTaskListeners()
 
     //finds the relevant project when editing a task box
     function getProject(valueHere) {
         hideAllTaskBox()
         let projectArray = projectList.getArray();
+        console.log(projectArray)
         let relevantProject = projectArray[valueHere]
         let tasksHere = relevantProject.getTasks()
+        console.log(tasksHere)
+
 
         tasksHere.forEach(function (tasksHere) {
             let x = tasksHere.taskNo;
-            console.log(x + "taskNo")
             x -= 1;
             console.log(x + "taskNo")
             document.getElementById(`${x}Cont`).style.display = "grid";
