@@ -44,19 +44,28 @@ export default function projectManip() {
         }
     })();
 
-    function makeInitialProjects() {        
+    function makeInitialProjects() { 
         let myLocalData = JSON.parse(window.localStorage.getItem("myLocalStore"))
-
+       
         if (myLocalData == null) {
             const defaultProject = new Project("0Project", "TodoList");
             projectList.addNewProject(defaultProject);
             console.log("noLocalData")
         } else {
+            //make a default array as though it's a new page
             console.log(projectList.getArray())
             const defaultProject = new Project("0Project", "TodoList");
             projectList.addNewProject(defaultProject);
+
+            //replace that array with localStorage
             projectList.replaceProjectArray(myLocalData);
             console.log(projectList.getArray())
+
+            //remake tasks as classes
+
+            //replace tasks in the project objects
+            console.log(projectList.getProject(0).tasks)
+
         }
     }
 
@@ -68,6 +77,13 @@ export default function projectManip() {
 
     // makeDefaultProject()
     makeInitialProjects()
+
+    function arrayInLocal() {
+        let projectArray = projectList.getArray();
+        localStorage.setItem("myLocalStore", JSON.stringify(projectArray));
+        let myLocalData = JSON.parse(window.localStorage.getItem("myLocalStore"))
+        console.log(myLocalData)
+    }
 
     //creates a new project with same name as drop input (in "projectList" / 
     //named "[no]Project") and header IDs ("[no]ProjectHead")
@@ -86,6 +102,8 @@ export default function projectManip() {
 
         const newProject = new Project(`${projectNo}Project`, nameProjValue);
         projectList.addNewProject(newProject);
+
+        arrayInLocal()
     });
 
     //add task to project
@@ -372,6 +390,8 @@ export default function projectManip() {
                 //replace the project in projectList
                 projectList.replaceProject(projectNo, project)
 
+                arrayInLocal()
+
                 return 
             });   
         } else if (boxNo == 2) {
@@ -392,6 +412,8 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
+
+                arrayInLocal()
 
                 return 
             });   
@@ -414,6 +436,8 @@ export default function projectManip() {
 
                 projectList.replaceProject(projectNo, project)
 
+                arrayInLocal()
+
                 return 
             });   
         } else if (boxNo == 4) {
@@ -434,6 +458,8 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
+
+                arrayInLocal()
 
                 return 
             });   
@@ -456,6 +482,8 @@ export default function projectManip() {
 
                 projectList.replaceProject(projectNo, project)
 
+                arrayInLocal()
+
                 return 
             });   
         } else if (boxNo == 6) {
@@ -476,6 +504,8 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
+
+                arrayInLocal()
 
                 return 
             });   
@@ -498,6 +528,8 @@ export default function projectManip() {
 
                 projectList.replaceProject(projectNo, project)
 
+                arrayInLocal()
+
                 return 
             });   
         } else if (boxNo == 8) {
@@ -518,6 +550,8 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
+
+                arrayInLocal()
 
                 return 
             });   
@@ -540,6 +574,8 @@ export default function projectManip() {
 
                 projectList.replaceProject(projectNo, project)
 
+                arrayInLocal()
+
                 return 
             });    
         } else if (boxNo == 10) {
@@ -560,6 +596,8 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
+
+                arrayInLocal()
 
                 return 
             });     
@@ -582,6 +620,8 @@ export default function projectManip() {
 
                 projectList.replaceProject(projectNo, project)
 
+                arrayInLocal()
+
                 return 
             });   
         } else if (boxNo == 12) {
@@ -602,6 +642,8 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
+
+                arrayInLocal()
 
                 return 
             });   
@@ -624,6 +666,8 @@ export default function projectManip() {
 
                 projectList.replaceProject(projectNo, project)
 
+                arrayInLocal()
+
                 return 
             });    
         } else if (boxNo == 14) {
@@ -644,6 +688,8 @@ export default function projectManip() {
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
+
+                arrayInLocal()
 
                 return 
             });   
@@ -666,14 +712,18 @@ export default function projectManip() {
 
                 projectList.replaceProject(projectNo, project)
 
+                arrayInLocal()
+
                 return 
             });   
         }
     }
+
+
     
     taskSubmitButton.addEventListener("click", function (){
         //make the task from inputs
-
+        // makeTaskFromInputs()
         let array = createInputTaskArray()
         const input = createTaskArray(array);
         const arrayObj = new Task(input);
@@ -685,6 +735,7 @@ export default function projectManip() {
         }      
 
         //append the task in the relevant project
+        // appendRelevantTask()
         const whichProject = getAssignedProjectAsNo();
 
         let project = projectList.getProject(whichProject);
@@ -694,12 +745,7 @@ export default function projectManip() {
 
         addDeleteTaskListeners(taskNo)
         addEditProjectManipListeners()
-
-        // puts array in local storage
-        let projectArray = projectList.getArray();
-        localStorage.setItem("myLocalStore", JSON.stringify(projectArray));
-        let myLocalData = JSON.parse(window.localStorage.getItem("myLocalStore"))
-        console.log(myLocalData)
+        arrayInLocal()
     });
 
     //add listeners for clicking and selecting which projects display
@@ -721,6 +767,7 @@ export default function projectManip() {
         });
     }
 
+    //filter by project
     function addProjectListeners() {
 
         let countAll = getProjectNo()
