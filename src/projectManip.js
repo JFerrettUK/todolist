@@ -9,6 +9,7 @@ import getLastBox from './getLastBox';
 import getProjectNoFromInput from './getProjectNoFromInput';
 import getProjectNoFromDOM from './getProjectNoFromDOM';
 import hideAllTaskBox from './hideAllTaskBox';
+import { replace } from 'lodash';
 
 export default function projectManip() {
     const projectList = (function () {
@@ -53,19 +54,64 @@ export default function projectManip() {
             console.log("noLocalData")
         } else {
             //make a default array as though it's a new page
-            console.log(projectList.getArray())
             const defaultProject = new Project("0Project", "TodoList");
             projectList.addNewProject(defaultProject);
 
             //replace that array with localStorage
             projectList.replaceProjectArray(myLocalData);
-            console.log(projectList.getArray())
 
             //remake tasks as classes
+            function getTaskList() {
+                let array = projectList.getArray()
+                let tasks = array.tasks
+                let completeTaskList = []
+
+                //loop through those projects to get tasks
+                for (let i = 0; i < array.length; i++) {
+                    let taskList = array[i].tasks
+                    
+                    //append each task in a new list
+                    for (let i = 0; i < taskList.length; i++) {
+                        completeTaskList.push(taskList[i])
+                    }
+                }
+
+                return completeTaskList
+            }
+            
+            let completeTaskList = getTaskList()
+
+            function remakeTaskAsClass() {
+                let tasksAsClassesArray = []
+                for (let i = 0; i < completeTaskList.length; i++) {
+                
+                    let taskArray = []
+                
+                    taskArray[0] = completeTaskList[i].taskNo
+                    taskArray[1] = completeTaskList[i].taskName
+                    taskArray[2] = completeTaskList[i].projectName
+                    taskArray[3] = completeTaskList[i].priority
+                    taskArray[4] = completeTaskList[i].shortDesc
+                    taskArray[5] = completeTaskList[i].dueDate
+
+                    let complTaskArray = createTaskArray(taskArray)
+
+                    tasksAsClassesArray[i] = new Task(complTaskArray)
+                }
+
+                return tasksAsClassesArray
+            }
+
+            let allLocalTaskClasses = remakeTaskAsClass()
+            console.log(allLocalTaskClasses)
 
             //replace tasks in the project objects
-            console.log(projectList.getProject(0).tasks)
-
+            function replaceTasksInProjects() {
+                for (let i = 0; i < allLocalTaskClasses.length; i++) {
+                    console.log(i)
+                }
+            }
+            replaceTasksInProjects()
         }
     }
 
