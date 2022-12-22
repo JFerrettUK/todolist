@@ -9,6 +9,8 @@ import getLastBox from './getLastBox';
 import getProjectNoFromInput from './getProjectNoFromInput';
 import getProjectNoFromDOM from './getProjectNoFromDOM';
 import hideAllTaskBox from './hideAllTaskBox';
+import createTaskBox from './createTaskBox';
+import createTaskArrayLocalSpace from './createTaskArrayLocalSpace';
 import { replace } from 'lodash';
 
 export default function projectManip() {
@@ -60,9 +62,26 @@ export default function projectManip() {
             //replace that array with localStorage
             projectList.replaceProjectArray(myLocalData);
 
+            function turnLocalProjIntoObj () {
+                let array = myLocalData;
+
+                //loop through projects and make each an object
+                for (let i = 0; i < array.length; i++) {
+                    let project = array[i]
+                    let projectID = project.id
+                    let projectName = project.name
+
+                    let idNo = getProjectNoFromInput(projectID)
+
+                    let newProject = new Project(projectID, projectName)
+                    projectList.replaceProject(idNo, newProject)
+                }
+            }
+            turnLocalProjIntoObj()
+
             //remake tasks as classes
             function getTaskList() {
-                let array = projectList.getArray()
+                let array  = JSON.parse(window.localStorage.getItem("myLocalStore"))
                 let tasks = array.tasks
                 let completeTaskList = []
 
@@ -87,7 +106,7 @@ export default function projectManip() {
                 
                     let taskArray = []
                 
-                    taskArray[0] = completeTaskList[i].taskNo
+                    taskArray[0] = i
                     taskArray[1] = completeTaskList[i].taskName
                     taskArray[2] = completeTaskList[i].projectName
                     taskArray[3] = completeTaskList[i].priority
@@ -103,15 +122,113 @@ export default function projectManip() {
             }
 
             let allLocalTaskClasses = remakeTaskAsClass()
-            console.log(allLocalTaskClasses)
 
             //replace tasks in the project objects
             function replaceTasksInProjects() {
+                let project0 = -1
+                let project1 = -1
+                let project2 = -1
+                let project3 = -1
+                let project4 = -1
+                let project5 = -1
+                let project6 = -1
+                let project7 = -1
+                let project8 = -1
+                let project9 = -1
+                let project10 = -1
+                let project11 = -1
+                let project12 = -1
+                let project13 = -1
+
                 for (let i = 0; i < allLocalTaskClasses.length; i++) {
-                    console.log(i)
+                    //get NEW project name and task no
+                    let projectName = allLocalTaskClasses[i].projectName
+                    console.log(projectName)
+                    let projectNo = getProjectNoFromInput(projectName)
+                    let newTask = allLocalTaskClasses[i]
+                    let taskNo = allLocalTaskClasses[i].taskNo
+
+                    //get OLD project and task
+                    let oldProject = projectList.getProject(projectNo)
+
+                    //make a function that checks how many projectNames have occured
+                    function countProjectNames() { 
+                        if (projectName == `0Project`) {
+                            project0++
+                        } else if (projectName == `1Project`) {
+                            project1++
+                        } else if (projectName == `2Project`) {
+                            project2++
+                        } else if (projectName == `3Project`) {
+                            project3++
+                        } else if (projectName == `4Project`) {
+                            project4++
+                        } else if (projectName == `5Project`) {
+                            project5++
+                        } else if (projectName == `6Project`) {
+                            project6++
+                        } else if (projectName == `7Project`) {
+                            project7++
+                        } else if (projectName == `8Project`) {
+                            project8++
+                        } else if (projectName == `9Project`) {
+                            project9++
+                        } else if (projectName == `10Project`) {
+                            project10++
+                        } else if (projectName == `11Project`) {
+                            project11++
+                        } else if (projectName == `12Project`) {
+                            project12++
+                        } else if (projectName == `13Project`) {
+                            project13++
+                        }
+                    }
+                    countProjectNames()
+
+                    if (projectName == `0Project`) {
+                        oldProject.replaceTask(project0, newTask)
+                    } else if (projectName == `1Project`) {
+                        oldProject.replaceTask(project1, newTask)
+                    } else if (projectName == `2Project`) {
+                        oldProject.replaceTask(project2, newTask)
+                    } else if (projectName == `3Project`) {
+                        oldProject.replaceTask(project3, newTask)
+                    } else if (projectName == `4Project`) {
+                        oldProject.replaceTask(project4, newTask)
+                    } else if (projectName == `5Project`) {
+                        oldProject.replaceTask(project5, newTask)
+                    } else if (projectName == `6Project`) {
+                        oldProject.replaceTask(project6, newTask)
+                    } else if (projectName == `7Project`) {
+                        oldProject.replaceTask(project7, newTask)
+                    } else if (projectName == `8Project`) {
+                        oldProject.replaceTask(project8, newTask)
+                    } else if (projectName == `9Project`) {
+                        oldProject.replaceTask(project9, newTask)
+                    } else if (projectName == `10Project`) {
+                        oldProject.replaceTask(project10, newTask)
+                    } else if (projectName == `11Project`) {
+                        oldProject.replaceTask(project11, newTask)
+                    } else if (projectName == `12Project`) {
+                        oldProject.replaceTask(project12, newTask)
+                    } else if (projectName == `13Project`) {
+                        oldProject.replaceTask(project13, newTask)
+                    }
+
+                    projectList.replaceProject(projectNo, oldProject)
+                    console.log(projectList.getArray())
+
                 }
             }
             replaceTasksInProjects()
+            
+            //replace tasks in the project objects
+            function makeTaskBoxes() {
+                for (let i = 0; i < allLocalTaskClasses.length; i++) {
+
+                }
+            }
+            makeTaskBoxes()
         }
     }
 
