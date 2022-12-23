@@ -11,6 +11,14 @@ import getProjectNoFromDOM from './getProjectNoFromDOM';
 import hideAllTaskBox from './hideAllTaskBox';
 import createTaskBox from './createTaskBox';
 import createTaskArrayLocalSpace from './createTaskArrayLocalSpace';
+import addEditListeners from './addEditListeners';
+import addDeleteListeners from './addDeleteListeners';
+import minus1ProjectNo from './minus1ProjectNo';
+import addProjectTitleListeners from './addProjectTitleListeners';
+import createProjectTaskOption from './createProjectTaskOption';
+
+
+
 import { replace } from 'lodash';
 
 export default function projectManip() {
@@ -103,7 +111,6 @@ export default function projectManip() {
             function remakeTaskAsClass() {
                 let tasksAsClassesArray = []
                 for (let i = 0; i < completeTaskList.length; i++) {
-                
                     let taskArray = []
                 
                     taskArray[0] = i
@@ -143,7 +150,6 @@ export default function projectManip() {
                 for (let i = 0; i < allLocalTaskClasses.length; i++) {
                     //get NEW project name and task no
                     let projectName = allLocalTaskClasses[i].projectName
-                    console.log(projectName)
                     let projectNo = getProjectNoFromInput(projectName)
                     let newTask = allLocalTaskClasses[i]
                     let taskNo = allLocalTaskClasses[i].taskNo
@@ -216,19 +222,67 @@ export default function projectManip() {
                     }
 
                     projectList.replaceProject(projectNo, oldProject)
-                    console.log(projectList.getArray())
 
                 }
             }
             replaceTasksInProjects()
-            
+
             //replace tasks in the project objects
             function makeTaskBoxes() {
                 for (let i = 0; i < allLocalTaskClasses.length; i++) {
-
+                    let taskArray = createTaskArrayLocalSpace(allLocalTaskClasses[i])
+                    createTaskBox(taskArray)
                 }
             }
+
+            function makeProjectHeaderLocalSpace() {
+                let completeList = projectList.getArray()
+                document.getElementById('projectsHere').innerHTML = '';
+
+                for (let i = 0; i < completeList.length; i++) {
+                    let projectName = completeList[i].name
+
+                    let projectHere = document.getElementById('projectsHere');
+                    let breakPoint = document.createElement('br');
+                               
+                    let project = document.createElement('span');
+                    project.setAttribute("class", `newProjectTxt`);
+                
+                    project.setAttribute("id", `${i}ProjectHead`);   
+                    project.textContent = `- ${projectName}`;
+                
+                    projectHere.appendChild(project);
+                    projectHere.appendChild(breakPoint);
+                }
+            }
+
+            function createProjectTaskOptionLocalSpace() {
+                let completeList = projectList.getArray()
+
+                const projectListHere = document.getElementById('projectList');
+                document.getElementById('projectList').innerHTML = '';
+            
+                for (let i = 0; i < completeList.length; i++) {
+                    const newOption = document.createElement('option');
+                    newOption.setAttribute("class", `newProjects`);
+                    newOption.setAttribute("id", `${i}Project`);
+
+                    let projectName = completeList[i].name
+                    newOption.textContent = `${projectName}`;
+                
+                    projectListHere.appendChild(newOption);
+                }
+            }
+            
+            makeProjectHeaderLocalSpace()
+            addProjectTitleListeners()
+            createProjectTaskOptionLocalSpace()
+            
             makeTaskBoxes()
+            addDeleteListeners();
+            addEditListeners();    
+            addDeleteTaskListeners()
+            addEditProjectManipListeners()
         }
     }
 
@@ -245,7 +299,6 @@ export default function projectManip() {
         let projectArray = projectList.getArray();
         localStorage.setItem("myLocalStore", JSON.stringify(projectArray));
         let myLocalData = JSON.parse(window.localStorage.getItem("myLocalStore"))
-        console.log(myLocalData)
     }
 
     //creates a new project with same name as drop input (in "projectList" / 
