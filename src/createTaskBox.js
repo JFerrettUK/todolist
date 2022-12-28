@@ -3,7 +3,6 @@ import getLastBox from './getLastBox';
 //Close the "add task" form
 
 export default function createTaskBox(input) {
-  console.log(input)
   let taskNo = input.taskNo();
   let taskName = input.task();
   let projectHere = input.project();

@@ -11,10 +11,12 @@ import getProjectNoFromDOM from './getProjectNoFromDOM';
 import hideAllTaskBox from './hideAllTaskBox';
 import createTaskBox from './createTaskBox';
 import createTaskArrayLocalSpace from './createTaskArrayLocalSpace';
-import addEditListeners from './addEditListeners';
-import addDeleteListeners from './addDeleteListeners';
-import minus1ProjectNo from './minus1ProjectNo';
-import addProjectTitleListeners from './addProjectTitleListeners';
+import addInitialDeleteListeners from './addInitialDeleteListeners';
+import addInitialEditListeners from './addInitialEditListeners';
+import addInitialProjectTitleListeners from './addInitialProjectTitleListeners';
+import getLastProject from './getLastProject';
+import testProject from './testProject';
+
 import createProjectTaskOption from './createProjectTaskOption';
 
 
@@ -235,6 +237,7 @@ export default function projectManip() {
                 }
             }
 
+            //make project headers in the projectHeader element of the DOM 
             function makeProjectHeaderLocalSpace() {
                 let completeList = projectList.getArray()
                 document.getElementById('projectsHere').innerHTML = '';
@@ -256,6 +259,7 @@ export default function projectManip() {
                 }
             }
 
+            //make project options in the projectTask form element of the DOM 
             function createProjectTaskOptionLocalSpace() {
                 let completeList = projectList.getArray()
 
@@ -273,15 +277,301 @@ export default function projectManip() {
                     projectListHere.appendChild(newOption);
                 }
             }
+
+            function initialDeleteTaskListeners(taskNo) {
+                taskNo++
+
+                let countAll = taskNo
+                console.log("count all + " + countAll + " in initialDeleteTaskListeners")
+                
+                if ((countAll) == 1) {
+                    const trash0 = document.getElementById("0Trash");
+
+                    trash0.addEventListener('click', () => {
+                        //get which project this box is using
+                        const assignedProject = getProjectNoFromDOM(0)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${0}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 2) {
+                    const trash1 = document.getElementById("1Trash");
+
+                    trash1.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(1)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${1}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 3) {
+                    const trash2 = document.getElementById("2Trash");
+
+                    trash2.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(2)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${2}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 4) {
+                    const trash3 = document.getElementById("3Trash");
+            
+                    trash3.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(3)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${3}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 5) {
+                    const trash4 = document.getElementById("4Trash");
+            
+                    trash4.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(4)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${4}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 6) {
+                    const trash5 = document.getElementById("5Trash");
+            
+                    trash5.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(5)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${5}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 7) {
+                    const trash6 = document.getElementById("6Trash");
+            
+                    trash6.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(6)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${6}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 8) {
+                    const trash7 = document.getElementById("7Trash");
+            
+                    trash7.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(7)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${7}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 9) {
+                    const trash8 = document.getElementById("8Trash");
+            
+                    trash8.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(8)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${8}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 10) {
+                    const trash9 = document.getElementById("9Trash");
+            
+                    trash9.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(9)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${9}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 11) {
+                    const trash10 = document.getElementById("10Trash");
+            
+                    trash10.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(10)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${10}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+        
+                    });
+                } else if (countAll == 12) {
+                    const trash11 = document.getElementById("11Trash");
+            
+                    trash11.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(11)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${11}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 13) {
+                    const trash12 = document.getElementById("12Trash");
+            
+                    trash12.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(12)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${12}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+        
+                    });
+                } else if (countAll == 14) {
+                    const trash13 = document.getElementById("13Trash");
+            
+                    trash13.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(13)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${13}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                } else if (countAll == 15) {
+                    const trash14 = document.getElementById("14Trash");
+            
+                    trash14.addEventListener('click', () => {
+                        const assignedProject = getProjectNoFromDOM(14)
+                        const projectNo = getProjectNoFromInput(assignedProject)
+            
+                        const project = projectList.getProject(projectNo)
+        
+                        //find this box's task no
+                        let taskNo = document.getElementById(`${14}taskNo`)
+        
+                        project.deleteTask(taskNo)
+        
+                        projectList.replaceProject(projectNo, project)
+                    });
+                }
+            }
+        
             
             makeProjectHeaderLocalSpace()
-            addProjectTitleListeners()
             createProjectTaskOptionLocalSpace()
             
+            //gets the number of boxes and makes projectTitle listeners for each
+            function makeAllProjectTitleListeners() {
+                let noOfProjects = getLastProject()
+                console.log(noOfProjects + " noOfProjects")
+                for (let i = 0; i < noOfProjects; i++) {
+                    console.log(i + " test")
+                    addInitialProjectTitleListeners(i)
+                    testProject(i);    
+                }
+            }
+            makeAllProjectTitleListeners()
+
             makeTaskBoxes()
-            addDeleteListeners();
-            addEditListeners();    
-            addDeleteTaskListeners()
+            
+            //gets the number of boxes and makes Delete listeners for each
+            function makeAllDeleteListeners() {
+                let noOfBoxes = getLastBox()
+                for (let i = 0; i <= noOfBoxes; i++) {
+                    addInitialDeleteListeners(i)
+                }
+            }
+            makeAllDeleteListeners()
+            //gets the number of boxes and makes Edit listeners for each
+            function makeAllEditListeners() {
+                let noOfBoxes = getLastBox()
+                for (let i = 0; i <= noOfBoxes; i++) {
+                    addInitialEditListeners(i);    
+                }
+            }
+            makeAllEditListeners();    
+
+            // function makeAllDeleteTaskListeners() {
+            //     for (let i = 0; i < 3; i++) {
+            //         initialDeleteTaskListeners(i)
+            //     }
+            // }
+            // makeAllDeleteTaskListeners()
+
             addEditProjectManipListeners()
         }
     }
