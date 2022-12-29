@@ -4,7 +4,6 @@ import showAllTaskBox from './showAllTaskBox';
 export default function addInitialProjectTitleListeners(projNo) {
 
     let countAll = projNo
-    console.log(projNo = " is projNo in addProjTitleListeners")
     
     const projects = document.getElementById(`projectHeader`);
     projects.addEventListener('click', () => {showAllTaskBox()});
@@ -73,4 +72,4 @@ export default function addInitialProjectTitleListeners(projNo) {
         const project14Text = project14.innerText;
         project14.addEventListener('click', () => {changeProjectTitle(project14Text)});
     }
-    }
+}

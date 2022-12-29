@@ -93,8 +93,6 @@ export default function domManip() {
         showAllTaskBox();
     });
 
-
-
     //Make the id titleHead innerText change depending on the selected project
 
     addDeleteListeners();
