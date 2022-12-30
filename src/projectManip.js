@@ -306,6 +306,33 @@ export default function projectManip() {
             }
             makeAllEditListeners();    
 
+            function makeInitialProjectObjListeners() {                
+                let noOfProjects = getLastProject()
+
+                function getInitialProject(projectHere) {
+                    hideAllTaskBox()
+                    let projectArray = projectList.getArray();
+                    console.log(projectArray)
+                    let relevantProject = projectArray[projectHere]
+                    let tasksHere = relevantProject.getTasks()
+            
+                    tasksHere.forEach(function (tasksHere) {
+                        let x = tasksHere.taskNo;
+                        console.log(x + " relevantCont in forEach")
+                        document.getElementById(`${x}Cont`).style.display = "grid";
+                    });
+                }
+
+                for (let i = 0; i < noOfProjects; i++) {
+                    console.log(i + " in initialProjectListeners")
+                    const project = document.getElementById(`${i}ProjectHead`);
+                    project.addEventListener('click', () => {getInitialProject(i)});
+                }
+            }
+            makeInitialProjectObjListeners();
+
+            
+
             // function makeAllDeleteTaskListeners() {
             //     for (let i = 0; i < 3; i++) {
             //         initialDeleteTaskListeners(i)
@@ -1066,7 +1093,11 @@ export default function projectManip() {
         addProjectListeners()
     });
 
-    addProjectListeners()
+    //create projectListeners if no local data
+    let myLocalData = JSON.parse(window.localStorage.getItem("myLocalStore"))
+    if (myLocalData == null) {
+        addProjectListeners()
+    }
 
     const headerText = document.getElementById("headerText")
     headerText.addEventListener("click", function () {
