@@ -312,7 +312,6 @@ export default function projectManip() {
                 function getInitialProject(projectHere) {
                     hideAllTaskBox()
                     let projectArray = projectList.getArray();
-                    console.log(projectArray)
                     let relevantProject = projectArray[projectHere]
                     let tasksHere = relevantProject.getTasks()
             
@@ -992,6 +991,7 @@ export default function projectManip() {
         const input = createTaskArray(array);
         const arrayObj = new Task(input);
         let taskNo = arrayObj.taskNo
+        console.log(taskNo)
 
         //stop if due date not working
         if (document.getElementById('dueDate').value == '') {
@@ -1026,7 +1026,6 @@ export default function projectManip() {
 
         tasksHere.forEach(function (tasksHere) {
             let x = tasksHere.taskNo;
-            x -= 1;
             document.getElementById(`${x}Cont`).style.display = "grid";
         });
     }
@@ -1035,6 +1034,7 @@ export default function projectManip() {
     function addProjectListeners() {
 
         let countAll = getProjectNo()
+        console.log(countAll + "in getProjectNo")
         
         if ((countAll) == 1) {
             const project0 = document.getElementById(`0ProjectHead`);

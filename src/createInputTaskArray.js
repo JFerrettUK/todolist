@@ -3,7 +3,7 @@
 import getLastBox from './getLastBox';
 
 export default function createInputTaskArray() {
-    const taskNo = getLastBox();
+    let taskNo = getLastBox();
     const taskNameInput = document.getElementById('taskNameInput').value;
     const priorityList = document.getElementById('priorityList').value;
     const shortDescInput = document.getElementById('shortDescInput').value;
@@ -13,7 +13,7 @@ export default function createInputTaskArray() {
     let projectOption = document.querySelector('#projectList');
     const projectNo = projectOption.options[projectOption.selectedIndex].id;
 
-    // taskNo -= 1
+    taskNo -= 1
 
     const taskArray = [];
     taskArray.push(taskNo);
