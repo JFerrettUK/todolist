@@ -19,8 +19,6 @@ export default function createInputEditTaskArray(boxNo) {
     //set assigned project
 
     //update to match normal no
-    taskNo += 1;
-
 
     const taskArray = [];
     taskArray.push(taskNo);
