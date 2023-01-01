@@ -81,7 +81,9 @@ export default function domManip() {
     submitTask.addEventListener("click", function (){
         changeInboxTitle()
         const array = createInputTaskArray();
+        console.log(array)
         const input = createTaskArray(array);
+        console.log(input)
         if (document.getElementById('dueDate').value == '') {
             alert("Set the due date!")
             return

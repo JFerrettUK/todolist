@@ -197,8 +197,9 @@ export default function createTaskBox(input) {
   editTaskSubmitBtns.appendChild(editTaskCancelButton);
 
   const taskNoHere = document.createElement('div');
-  taskNoHere.setAttribute("class", `${boxNo}taskNo`);
-  taskNoHere.setAttribute("id", `${taskNo}`)
+  taskNo++
+  taskNoHere.innerText = `${taskNo}`
+  taskNoHere.setAttribute("id", `${boxNo}taskNo`);
   editTaskFormCont.appendChild(taskNoHere);
 
 }
