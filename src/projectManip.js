@@ -1037,16 +1037,22 @@ export default function projectManip() {
 
                         if (taskNoFromDOM == taskFromList) {
                             console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + " is number of task in projectList")
+                            return i
+                        }
                     }
                 }
+
+                //pseudocode:
+                //find the task with the relevant number
+                //mark what its number in the list is
                 
                 let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
+                let relevantTask = findRelevantTaskNo()
                 console.log(taskNo + " is taskNo")
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
