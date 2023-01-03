@@ -287,16 +287,16 @@ export default function projectManip() {
             }
             makeTaskBoxes()
 
-            //problem is how InitialDeleteTaskListeners finds the task:
-            //when a box is deleted, it stays in the DOM. It is removed from the system,
-            //meaning getLastBox no longer works
-
             //OBJ: addInitialDeleteTaskListeners here so it can edit projectList
-            function addInitialDeleteTaskListeners(taskNo) {          
 
-                if (taskNo == 0) {
+            function addInitialDeleteTaskListeners(taskNo) {
+
+                let countAll = taskNo++
+                countAll++
+
+                if ((countAll) == 1) {
                     const trash0 = document.getElementById("0Trash");
-                                
+            
                     trash0.addEventListener('click', () => {
                         //get which project this box is using
                         const assignedProject = getProjectNoFromDOM(0)
@@ -304,16 +304,37 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById("0taskNo")
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`0taskNo`).innerText
+                            console.log(taskNoFromDOM + " is taskNoFromDOM")
+
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+                                console.log(taskFromList + " is taskFromList")
+
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
         
-                        project.deleteTask(taskNo)
+                        //pseudocode:
+                        //find the task with the relevant number
+                        //mark what its number in the list is
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 1) {
+                } else if (countAll == 2) {
                     const trash1 = document.getElementById("1Trash");
             
                     trash1.addEventListener('click', () => {
@@ -322,16 +343,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`1taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`1taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }   
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 2) {
+                } else if (countAll == 3) {
                     const trash2 = document.getElementById("2Trash");
             
                     trash2.addEventListener('click', () => {
@@ -340,16 +377,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`2taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`2taskNo`).innerText
+                            console.log(taskNoFromDOM + " is taskNoFromDOM")
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                } 
+                            }
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 3) {
+                } else if (countAll == 4) {
                     const trash3 = document.getElementById("3Trash");
             
                     trash3.addEventListener('click', () => {
@@ -358,16 +411,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`3taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`3taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }   
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 4) {
+                } else if (countAll == 5) {
                     const trash4 = document.getElementById("4Trash");
             
                     trash4.addEventListener('click', () => {
@@ -376,16 +445,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`4taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`4taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 5) {
+                } else if (countAll == 6) {
                     const trash5 = document.getElementById("5Trash");
             
                     trash5.addEventListener('click', () => {
@@ -394,16 +479,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`5taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`5taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }    
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 6) {
+                } else if (countAll == 7) {
                     const trash6 = document.getElementById("6Trash");
             
                     trash6.addEventListener('click', () => {
@@ -412,16 +513,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`6taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`6taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 7) {
+                } else if (countAll == 8) {
                     const trash7 = document.getElementById("7Trash");
             
                     trash7.addEventListener('click', () => {
@@ -430,16 +547,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`7taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`7taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                } 
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 8) {
+                } else if (countAll == 9) {
                     const trash8 = document.getElementById("8Trash");
             
                     trash8.addEventListener('click', () => {
@@ -448,16 +581,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`8taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`8taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 9) {
+                } else if (countAll == 10) {
                     const trash9 = document.getElementById("9Trash");
             
                     trash9.addEventListener('click', () => {
@@ -466,16 +615,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`9taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`9taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 10) {
+                } else if (countAll == 11) {
                     const trash10 = document.getElementById("10Trash");
             
                     trash10.addEventListener('click', () => {
@@ -484,16 +649,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`10taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`10taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
         
                     });
-                } else if (taskNo == 11) {
+                } else if (countAll == 12) {
                     const trash11 = document.getElementById("11Trash");
             
                     trash11.addEventListener('click', () => {
@@ -502,16 +683,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`11taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`11taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 12) {
+                } else if (countAll == 13) {
                     const trash12 = document.getElementById("12Trash");
             
                     trash12.addEventListener('click', () => {
@@ -520,16 +717,33 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`12taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`12taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }
+                            
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
         
                     });
-                } else if (taskNo == 13) {
+                } else if (countAll == 14) {
                     const trash13 = document.getElementById("13Trash");
             
                     trash13.addEventListener('click', () => {
@@ -538,16 +752,32 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`13taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`13taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }         
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
-                } else if (taskNo == 14) {
+                } else if (countAll == 15) {
                     const trash14 = document.getElementById("14Trash");
             
                     trash14.addEventListener('click', () => {
@@ -556,26 +786,42 @@ export default function projectManip() {
             
                         const project = projectList.getProject(projectNo)
         
-                        //find this box's task no
-                        let taskNo = document.getElementById(`14taskNo`)
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`14taskNo`).innerText
         
-                        project.deleteTask(taskNo)
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    console.log(i + "is relevant taskNo")
+                                    return i
+                                }
+                            
+                            }
+                            return i
+                        }
+                        
+                        let relevantTask = findRelevantTaskNo()
+                        relevantTask--
+                        console.log(relevantTask + " find the relevantTask")
+                          
+                        project.deleteTask(relevantTask)
         
                         projectList.replaceProject(projectNo, project)
                         arrayInLocal()
-
+        
                     });
                 }
             }
-
-            // function makeAllDeleteTaskListeners() {
-            //     let noOfTasks = getLastBox()
-
-            //     for (let i = 0; i < noOfTasks; i++) {
-            //         addInitialDeleteTaskListeners(i)
-            //     }
-            // }
-            // makeAllDeleteTaskListeners()
+            function makeAllDeleteTaskListeners() {
+                let noOfTasks = getLastBox()
+                console.log(noOfTasks + " is getLastBox")
+                for (let i = 0; i < noOfTasks; i++) {
+                    addInitialDeleteTaskListeners(i)
+                }
+            }
+            makeAllDeleteTaskListeners()
             
             //DOM: gets the number of boxes and makes Delete listeners for each
             function makeAllDeleteListeners() {
@@ -618,10 +864,14 @@ export default function projectManip() {
             }
             makeInitialProjectObjListeners();
 
-            //addInitialEditProjectManipListeners here so it can edit projectList
-            function addInitialEditProjectManipListeners() {
-                let boxNo = getLastBox()
-                
+            // addInitialEditProjectManipListeners here so it can edit projectList
+            function addInitialEditProjectManipListeners(taskNo) {
+
+                let boxNo = taskNo++
+                console.log(boxNo + " is input of taskNo in editProj")
+                boxNo++
+                console.log(boxNo + " is second input of taskNo in editProj")
+
                 if (boxNo == 0) {
                     return
                 } else if (boxNo == 1) {
@@ -636,11 +886,11 @@ export default function projectManip() {
         
                         //save new task data as an array
                         const inputArray = createInputEditTaskArray(0);
+                        console.log(inputArray)
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
                         //taskNo
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
         
                         //replace the task within the project using getTaskNo
                         project.replaceTask(taskNo, replacementTask)
@@ -665,7 +915,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -688,7 +937,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -711,7 +959,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -734,7 +981,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -757,7 +1003,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -780,7 +1025,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -803,7 +1047,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -826,7 +1069,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -849,7 +1091,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -872,7 +1113,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -895,7 +1135,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -918,7 +1157,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -941,7 +1179,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -964,7 +1201,6 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        taskNo -= 1
                         
                         project.replaceTask(taskNo, replacementTask)
         
@@ -976,6 +1212,16 @@ export default function projectManip() {
                     });   
                 }
             }
+
+            function makeAllEditProjListeners() {
+                let noOfTasks = getLastBox()
+                console.log(noOfTasks + " is getLastBox")
+                for (let i = 0; i < noOfTasks; i++) {
+                    addInitialEditProjectManipListeners(i)
+                }
+            }
+            makeAllEditProjListeners();    
+
 
             //left to do:
             //add OBJ delete listeners
@@ -1012,9 +1258,6 @@ export default function projectManip() {
 
     function addDeleteTaskListeners() {
 
-        //id being set when making the box is now correct
-        //now doesn't work when an item is deleted from array -- makes set no not match
-
         let countAll = getLastBox()
         
         if ((countAll) == 1) {
@@ -1033,23 +1276,20 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            console.log(i + " is number of task in projectList")
+                            console.log(i + " is relevant taskNo")
                             return i
                         }
                     }
+                    return i
                 }
 
                 //pseudocode:
                 //find the task with the relevant number
                 //mark what its number in the list is
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
                 let relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
                 console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
@@ -1073,24 +1313,23 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }   
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
-
+                
             });
         } else if (countAll == 3) {
             const trash2 = document.getElementById("2Trash");
@@ -1108,20 +1347,18 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        } 
                     }
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1142,20 +1379,19 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }   
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1176,20 +1412,19 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1210,20 +1445,19 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }    
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1244,20 +1478,19 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1278,20 +1511,19 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        } 
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1312,20 +1544,19 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1346,20 +1577,19 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1380,20 +1610,19 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1414,20 +1643,19 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1448,25 +1676,23 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }      
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }
                     
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
-
 
             });
         } else if (countAll == 14) {
@@ -1484,20 +1710,19 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        }                    
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }         
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1518,21 +1743,20 @@ export default function projectManip() {
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
-                        let relevantTask = project.tasks[i]
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(taskFromList + "is relevant taskNo")
-                            return relevantTask
-                        } 
+                            console.log(i + "is relevant taskNo")
+                            return i
+                        }
                     
                     }
+                    return i
                 }
                 
-                let taskNo = document.getElementById(`0taskNo`).innerText
-                relevantTask = findRelevantTaskNo()
-                console.log(taskNo + " is taskNo")
+                let relevantTask = findRelevantTaskNo()
+                console.log(relevantTask + " find the relevantTask")
                   
-                project.deleteTask(taskNo)
+                project.deleteTask(relevantTask)
 
                 projectList.replaceProject(projectNo, project)
                 arrayInLocal()
@@ -1924,7 +2148,7 @@ export default function projectManip() {
 
         projectList.replaceProject(whichProject, project);
 
-        addDeleteTaskListeners(taskNo)
+        addDeleteTaskListeners()
         addEditProjectManipListeners()
         arrayInLocal()
     });
@@ -1933,7 +2157,7 @@ export default function projectManip() {
     let myLocalData = JSON.parse(window.localStorage.getItem("myLocalStore"))
 
     if (myLocalData == null) {
-        addDeleteTaskListeners(0)
+        addDeleteTaskListeners()
         addEditProjectManipListeners()
     } 
 

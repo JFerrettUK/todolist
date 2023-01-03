@@ -200,6 +200,7 @@ export default function createTaskBox(input) {
   taskNo++
   taskNoHere.innerText = `${taskNo}`
   taskNoHere.setAttribute("id", `${boxNo}taskNo`);
+  taskNoHere.setAttribute("class", `storedTaskNumber`);
   editTaskFormCont.appendChild(taskNoHere);
 
 }

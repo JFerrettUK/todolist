@@ -358,3 +358,8 @@ body {
     margin-bottom: 5px;
     font-size:x-large;
 }
+
+.storedTaskNumber {
+    display: none;
+    color: red;
+}
