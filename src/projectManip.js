@@ -307,11 +307,9 @@ export default function projectManip() {
                         function findRelevantTaskNo() {
                             const project = projectList.getProject(projectNo)
                             let taskNoFromDOM = document.getElementById(`0taskNo`).innerText
-                            console.log(taskNoFromDOM + " is taskNoFromDOM")
 
                             for (var i = 0; i < project.tasks.length; i++) {
                                 let taskFromList = project.tasks[i].taskNo
-                                console.log(taskFromList + " is taskFromList")
 
                                 if (taskNoFromDOM == taskFromList) {
                                     return i
@@ -326,7 +324,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -351,7 +348,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }   
                             }
@@ -360,7 +356,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -380,13 +375,11 @@ export default function projectManip() {
                         function findRelevantTaskNo() {
                             const project = projectList.getProject(projectNo)
                             let taskNoFromDOM = document.getElementById(`2taskNo`).innerText
-                            console.log(taskNoFromDOM + " is taskNoFromDOM")
         
                             for (var i = 0; i < project.tasks.length; i++) {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 } 
                             }
@@ -394,7 +387,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -419,7 +411,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }   
                             }
@@ -428,7 +419,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -453,7 +443,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }
                             }
@@ -462,7 +451,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -487,7 +475,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }    
                             }
@@ -496,7 +483,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -521,7 +507,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }
                             }
@@ -530,7 +515,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -555,7 +539,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 } 
                             }
@@ -564,7 +547,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -589,7 +571,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }
                             }
@@ -598,7 +579,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -623,7 +603,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }
                             }
@@ -632,7 +611,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -657,7 +635,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }
                             }
@@ -666,7 +643,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -691,7 +667,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }
                             }
@@ -700,7 +675,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -725,7 +699,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }
                             
@@ -735,7 +708,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -760,7 +732,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }         
                             }
@@ -769,7 +740,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -794,7 +764,6 @@ export default function projectManip() {
                                 let taskFromList = project.tasks[i].taskNo
         
                                 if (taskNoFromDOM == taskFromList) {
-                                    console.log(i + "is relevant taskNo")
                                     return i
                                 }
                             
@@ -804,7 +773,6 @@ export default function projectManip() {
                         
                         let relevantTask = findRelevantTaskNo()
                         relevantTask--
-                        console.log(relevantTask + " find the relevantTask")
                           
                         project.deleteTask(relevantTask)
         
@@ -816,7 +784,6 @@ export default function projectManip() {
             }
             function makeAllDeleteTaskListeners() {
                 let noOfTasks = getLastBox()
-                console.log(noOfTasks + " is getLastBox")
                 for (let i = 0; i < noOfTasks; i++) {
                     addInitialDeleteTaskListeners(i)
                 }
@@ -866,11 +833,10 @@ export default function projectManip() {
 
             // addInitialEditProjectManipListeners here so it can edit projectList
             function addInitialEditProjectManipListeners(taskNo) {
-
                 let boxNo = taskNo++
-                console.log(boxNo + " is input of taskNo in editProj")
                 boxNo++
-                console.log(boxNo + " is second input of taskNo in editProj")
+
+                //taskNo put in from replacementTask is incorrect
 
                 if (boxNo == 0) {
                     return
@@ -886,11 +852,12 @@ export default function projectManip() {
         
                         //save new task data as an array
                         const inputArray = createInputEditTaskArray(0);
-                        console.log(inputArray)
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
+
                         //taskNo
                         let taskNo = replacementTask.getTaskNo()
+                        console.log(taskNo + "is addInitialTaskNo")
         
                         //replace the task within the project using getTaskNo
                         project.replaceTask(taskNo, replacementTask)
@@ -913,9 +880,11 @@ export default function projectManip() {
                         const inputArray = createInputEditTaskArray(1);
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
-        
+                        
                         let taskNo = replacementTask.getTaskNo()
-        
+                        console.log(taskNo + "is addInitialTaskNo")
+                        
+
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -937,7 +906,8 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-        
+                        console.log(taskNo + "is addInitialTaskNo")
+
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -959,7 +929,8 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        
+                        console.log(taskNo + "is addInitialTaskNo")
+
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -981,7 +952,8 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        
+                        console.log(taskNo + "is addInitialTaskNo")
+
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1003,7 +975,8 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        
+                        console.log(taskNo + "is addInitialTaskNo")
+
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1025,7 +998,8 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        
+                        console.log(taskNo + "is addInitialTaskNo")
+
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1047,7 +1021,8 @@ export default function projectManip() {
                         const replacementTask = new Task(input);
         
                         let taskNo = replacementTask.getTaskNo()
-                        
+                        console.log(taskNo + "is addInitialTaskNo")
+
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1278,7 +1253,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + " is relevant taskNo")
                             return i
                         }
                     }
@@ -1290,7 +1264,6 @@ export default function projectManip() {
                 //mark what its number in the list is
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1315,7 +1288,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }   
                     }
@@ -1323,7 +1295,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1343,20 +1314,17 @@ export default function projectManip() {
                 function findRelevantTaskNo() {
                     const project = projectList.getProject(projectNo)
                     let taskNoFromDOM = document.getElementById(`2taskNo`).innerText
-                    console.log(taskNoFromDOM + " is taskNoFromDOM")
 
                     for (var i = 0; i < project.tasks.length; i++) {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         } 
                     }
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1381,7 +1349,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }   
                     }
@@ -1389,7 +1356,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1414,7 +1380,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }
                     }
@@ -1422,7 +1387,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1447,7 +1411,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }    
                     }
@@ -1455,7 +1418,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1480,7 +1442,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }
                     }
@@ -1488,7 +1449,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1513,7 +1473,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         } 
                     }
@@ -1521,7 +1480,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1546,7 +1504,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }
                     }
@@ -1554,7 +1511,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1579,7 +1535,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }
                     }
@@ -1587,7 +1542,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1612,7 +1566,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }
                     }
@@ -1620,7 +1573,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1645,7 +1597,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }
                     }
@@ -1653,7 +1604,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1678,7 +1628,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }
                     
@@ -1687,7 +1636,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1712,7 +1660,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }         
                     }
@@ -1720,7 +1667,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1745,7 +1691,6 @@ export default function projectManip() {
                         let taskFromList = project.tasks[i].taskNo
 
                         if (taskNoFromDOM == taskFromList) {
-                            console.log(i + "is relevant taskNo")
                             return i
                         }
                     
@@ -1754,7 +1699,6 @@ export default function projectManip() {
                 }
                 
                 let relevantTask = findRelevantTaskNo()
-                console.log(relevantTask + " find the relevantTask")
                   
                 project.deleteTask(relevantTask)
 
@@ -1788,6 +1732,7 @@ export default function projectManip() {
                 //taskNo
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
+                console.log(taskNo + " taskNo in addEditProj")
 
                 //replace the task within the project using getTaskNo
                 project.replaceTask(taskNo, replacementTask)
@@ -1813,6 +1758,7 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
+                console.log(taskNo + " taskNo in addEditProj")
 
                 project.replaceTask(taskNo, replacementTask)
 
@@ -1836,6 +1782,7 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
+                console.log(taskNo + " taskNo in addEditProj")
 
                 project.replaceTask(taskNo, replacementTask)
 
@@ -1859,7 +1806,8 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
-                
+                console.log(taskNo + " taskNo in addEditProj")
+
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1882,7 +1830,8 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
-                
+                console.log(taskNo + " taskNo in addEditProj")
+
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1905,7 +1854,8 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
-                
+                console.log(taskNo + " taskNo in addEditProj")
+
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1928,6 +1878,7 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
+                console.log(taskNo + " taskNo in addEditProj")
                 
                 project.replaceTask(taskNo, replacementTask)
 
@@ -1951,6 +1902,7 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
+                console.log(taskNo + " taskNo in addEditProj")
                 
                 project.replaceTask(taskNo, replacementTask)
 
@@ -1974,7 +1926,8 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
-                
+                console.log(taskNo + " taskNo in addEditProj")
+
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1997,6 +1950,7 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
+                console.log(taskNo + " taskNo in addEditProj")
                 
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2020,6 +1974,7 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
+                console.log(taskNo + " taskNo in addEditProj")
                 
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2043,7 +1998,8 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
-                
+                console.log(taskNo + " taskNo in addEditProj")
+
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -2066,7 +2022,8 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
-                
+                console.log(taskNo + " taskNo in addEditProj")
+
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -2089,7 +2046,8 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
-                
+                console.log(taskNo + " taskNo in addEditProj")
+
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -2112,7 +2070,8 @@ export default function projectManip() {
 
                 let taskNo = replacementTask.getTaskNo()
                 taskNo -= 1
-                
+                console.log(taskNo + " taskNo in addEditProj")
+
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
