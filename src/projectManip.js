@@ -833,11 +833,10 @@ export default function projectManip() {
 
             // addInitialEditProjectManipListeners here so it can edit projectList
             function addInitialEditProjectManipListeners(taskNo) {
-                let boxNo = taskNo++
+                let boxNo = taskNo
                 boxNo++
-
-                //taskNo put in from replacementTask is incorrect
-
+                console.log(boxNo + " is boxNo in addInitialEdit")
+                
                 if (boxNo == 0) {
                     return
                 } else if (boxNo == 1) {
@@ -852,13 +851,32 @@ export default function projectManip() {
         
                         //save new task data as an array
                         const inputArray = createInputEditTaskArray(0);
+                        console.log(inputArray)
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
-
-                        //taskNo
-                        let taskNo = replacementTask.getTaskNo()
-                        console.log(taskNo + "is addInitialTaskNo")
         
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`0taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        //pseudocode:
+                        //find the task with the relevant number
+                        //mark what its number in the list is
+                        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+
                         //replace the task within the project using getTaskNo
                         project.replaceTask(taskNo, replacementTask)
         
@@ -880,11 +898,25 @@ export default function projectManip() {
                         const inputArray = createInputEditTaskArray(1);
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
-                        
-                        let taskNo = replacementTask.getTaskNo()
-                        console.log(taskNo + "is addInitialTaskNo")
-                        
-
+        
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`1taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -905,9 +937,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        console.log(taskNo + "is addInitialTaskNo")
-
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`2taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -928,9 +975,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        console.log(taskNo + "is addInitialTaskNo")
-
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`3taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -951,9 +1013,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        console.log(taskNo + "is addInitialTaskNo")
-
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`4taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -974,9 +1051,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        console.log(taskNo + "is addInitialTaskNo")
-
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`5taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -997,9 +1089,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        console.log(taskNo + "is addInitialTaskNo")
-
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`6taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1020,9 +1127,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        console.log(taskNo + "is addInitialTaskNo")
-
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`7taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1043,8 +1165,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`8taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1065,8 +1203,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`9taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1087,8 +1241,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`10taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1109,8 +1279,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`11taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1131,8 +1317,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`12taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1153,8 +1355,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`13taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1175,8 +1393,24 @@ export default function projectManip() {
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
-                        let taskNo = replacementTask.getTaskNo()
-                        
+                        function findRelevantTaskNo() {
+                            const project = projectList.getProject(projectNo)
+                            let taskNoFromDOM = document.getElementById(`14taskNo`).innerText
+        
+                            for (var i = 0; i < project.tasks.length; i++) {
+                                let taskFromList = project.tasks[i].taskNo
+        
+                                if (taskNoFromDOM == taskFromList) {
+                                    return i
+                                }
+                            }
+                            return i
+                        }
+        
+                        let taskNo = findRelevantTaskNo()
+                        taskNo--  
+                        console.log(taskNo + " is taskNo from new method")
+                          
                         project.replaceTask(taskNo, replacementTask)
         
                         projectList.replaceProject(projectNo, project)
@@ -1727,13 +1961,32 @@ export default function projectManip() {
 
                 //save new task data as an array
                 const inputArray = createInputEditTaskArray(0);
+                console.log(inputArray)
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
-                //taskNo
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
 
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`0taskNo`).innerText
+
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                //pseudocode:
+                //find the task with the relevant number
+                //mark what its number in the list is
+                
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 //replace the task within the project using getTaskNo
                 project.replaceTask(taskNo, replacementTask)
 
@@ -1756,10 +2009,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`1taskNo`).innerText
 
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1780,10 +2047,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`2taskNo`).innerText
 
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1804,10 +2085,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`3taskNo`).innerText
 
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1828,10 +2123,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`4taskNo`).innerText
 
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1852,10 +2161,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`5taskNo`).innerText
 
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1876,10 +2199,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
-                
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`6taskNo`).innerText
+
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1900,10 +2237,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
-                
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`7taskNo`).innerText
+
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1924,10 +2275,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`8taskNo`).innerText
 
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1948,10 +2313,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
-                
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`9taskNo`).innerText
+
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1972,10 +2351,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
-                
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`10taskNo`).innerText
+
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -1996,10 +2389,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`11taskNo`).innerText
 
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -2020,10 +2427,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`12taskNo`).innerText
 
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -2044,10 +2465,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`13taskNo`).innerText
 
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
@@ -2068,10 +2503,24 @@ export default function projectManip() {
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
-                let taskNo = replacementTask.getTaskNo()
-                taskNo -= 1
-                console.log(taskNo + " taskNo in addEditProj")
+                function findRelevantTaskNo() {
+                    const project = projectList.getProject(projectNo)
+                    let taskNoFromDOM = document.getElementById(`14taskNo`).innerText
 
+                    for (var i = 0; i < project.tasks.length; i++) {
+                        let taskFromList = project.tasks[i].taskNo
+
+                        if (taskNoFromDOM == taskFromList) {
+                            return i
+                        }
+                    }
+                    return i
+                }
+
+                let taskNo = findRelevantTaskNo()
+                taskNo
+                console.log(taskNo + " is taskNo from new method")
+                  
                 project.replaceTask(taskNo, replacementTask)
 
                 projectList.replaceProject(projectNo, project)
