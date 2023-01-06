@@ -1,8 +1,8 @@
 @font-face {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;;
-    src: url('./Roboto-Black.ttf') format('ttf'),
-      url('./Roboto-Thin.ttf') format('ttf'),
-      url('./Roboto-Regular.ttf') format('ttf');
+    font-family: Helvetica, Arial, sans-serif;;
+    src: url('./Helvetica-Black.ttf') format('ttf'),
+      url('./Helvetica-Thin.ttf') format('ttf'),
+      url('./Helvetica-Regular.ttf') format('ttf');
     font-weight: 500;
     font-style: normal;
   }
@@ -17,7 +17,7 @@ body {
     width: 100%;
     margin: 0;
     color: white;
-    font: 500 100% 'Roboto';
+    font: 500 100% 'Helvetica';
 }
 
 .page-wrap {
