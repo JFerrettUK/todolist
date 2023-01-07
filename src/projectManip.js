@@ -63,7 +63,6 @@ export default function projectManip() {
         if (myLocalData == null) {
             const defaultProject = new Project("0Project", "TodoList");
             projectList.addNewProject(defaultProject);
-            console.log("noLocalData")
         } else {
             //OBJ: make a default array as though it's a new page
             const defaultProject = new Project("0Project", "TodoList");
@@ -835,7 +834,6 @@ export default function projectManip() {
             function addInitialEditProjectManipListeners(taskNo) {
                 let boxNo = taskNo
                 boxNo++
-                console.log(boxNo + " is boxNo in addInitialEdit")
                 
                 if (boxNo == 0) {
                     return
@@ -851,7 +849,6 @@ export default function projectManip() {
         
                         //save new task data as an array
                         const inputArray = createInputEditTaskArray(0);
-                        console.log(inputArray)
                         const input = createTaskArray(inputArray);
                         const replacementTask = new Task(input);
         
@@ -875,7 +872,6 @@ export default function projectManip() {
                         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
 
                         //replace the task within the project using getTaskNo
                         project.replaceTask(taskNo, replacementTask)
@@ -915,7 +911,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -953,7 +948,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -991,7 +985,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1029,7 +1022,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1067,7 +1059,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1105,7 +1096,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1143,7 +1133,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1181,7 +1170,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1219,7 +1207,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1257,7 +1244,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1295,7 +1281,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1333,7 +1318,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1371,7 +1355,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1409,7 +1392,6 @@ export default function projectManip() {
         
                         let taskNo = findRelevantTaskNo()
                         taskNo--  
-                        console.log(taskNo + " is taskNo from new method")
                           
                         project.replaceTask(taskNo, replacementTask)
         
@@ -1424,7 +1406,6 @@ export default function projectManip() {
 
             function makeAllEditProjListeners() {
                 let noOfTasks = getLastBox()
-                console.log(noOfTasks + " is getLastBox")
                 for (let i = 0; i < noOfTasks; i++) {
                     addInitialEditProjectManipListeners(i)
                 }
@@ -1961,7 +1942,6 @@ export default function projectManip() {
 
                 //save new task data as an array
                 const inputArray = createInputEditTaskArray(0);
-                console.log(inputArray)
                 const input = createTaskArray(inputArray);
                 const replacementTask = new Task(input);
 
@@ -1985,7 +1965,6 @@ export default function projectManip() {
                 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 //replace the task within the project using getTaskNo
                 project.replaceTask(taskNo, replacementTask)
@@ -2025,7 +2004,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2063,7 +2041,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2101,7 +2078,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2139,7 +2115,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2177,7 +2152,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2215,7 +2189,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2253,7 +2226,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2291,7 +2263,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2329,7 +2300,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2367,7 +2337,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2405,7 +2374,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2443,7 +2411,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2481,7 +2448,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
@@ -2519,7 +2485,6 @@ export default function projectManip() {
 
                 let taskNo = findRelevantTaskNo()
                 taskNo
-                console.log(taskNo + " is taskNo from new method")
                   
                 project.replaceTask(taskNo, replacementTask)
 
